@@ -1,13 +1,9 @@
 export function Login() {
   return (
-    <div className="bg-[#FBF4F4] h-screen">
-      <div className="w-[1366px]">
+    <div className="h-screen">
+      <div className="">
         <div className="pt-8 pl-8">
-          <img
-            src="../public/Title.png"
-            alt="logo gestão marketplace"
-            className=""
-          />
+          <img src="../public/Title.png" alt="logo gestão marketplace" />
         </div>
       </div>
     </div>
