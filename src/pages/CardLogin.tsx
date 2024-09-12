@@ -2,7 +2,7 @@ import { Eye, KeyRound, Mail, MoveRight } from "lucide-react";
 
 export function CardLogin() {
   return (
-    <div className="p-6 border border-red-950">
+    <div className="p-6">
       <div className="bg-white rounded-[32px] w-[494px]">
         <div className="px-20 py-10 space-y-12">
           <div className="space-y-12">

@@ -3,7 +3,7 @@ import { CardLogin } from "./CardLogin";
 export function Login() {
   return (
     <div className="h-screen">
-      <div className="flex">
+      <div className="flex justify-between items-center">
         <div className="w-[755px]">
           <figure className="pt-8 pl-8">
             <img src="../public/Title.png" alt="logo gestão marketplace" />
