@@ -1,3 +1,5 @@
+import { Eye, KeyRound, Mail, MoveRight } from "lucide-react";
+
 export function FormLogin() {
   return (
     <form action="" className="space-y-12">
