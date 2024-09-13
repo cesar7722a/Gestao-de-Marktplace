@@ -1,31 +1,7 @@
 import { Eye, KeyRound, Mail, MoveRight } from "lucide-react";
-import { useRef } from "react";
 import { Input } from "./Input";
 
 export function FormLogin() {
-  const mailIconRef = useRef<SVGSVGElement>(null);
-  const KeyRoundIconRef = useRef<SVGSVGElement>(null);
-
-  const inputFocos = () => {
-    if (mailIconRef.current)
-      if (mailIconRef.current.classList.contains("text-[#949494]")) {
-        mailIconRef.current.classList.remove("text-[#949494]");
-        mailIconRef.current.classList.add("text-[#F24D0D]");
-      } else {
-        mailIconRef.current.classList.remove("text-[#F24D0D]");
-      }
-  };
-
-  const inputPassWordFocos = () => {
-    if (KeyRoundIconRef.current)
-      if (KeyRoundIconRef.current.classList.contains("text-[#949494]")) {
-        KeyRoundIconRef.current.classList.remove("text-[#949494]");
-        KeyRoundIconRef.current.classList.add("text-[#F24D0D]");
-      } else {
-        KeyRoundIconRef.current.classList.remove("text-[#F24D0D]");
-      }
-  };
-
   return (
     <form className="space-y-12">
       <div className="space-y-5">
