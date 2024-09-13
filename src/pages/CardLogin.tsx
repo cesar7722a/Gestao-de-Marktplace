@@ -1,4 +1,5 @@
 import { MoveRight } from "lucide-react";
+import { FormLogin } from "../components/FormLogin";
 
 export function CardLogin() {
   return (
@@ -15,12 +16,13 @@ export function CardLogin() {
               </h2>
             </div>
           </div>
+          <FormLogin />
           <div className="space-y-3">
             <h3 className="text-base text-[#666666]">
               Ainda não tem uma conta?
             </h3>
-            <button className="px-5 rounded-xl h-14 flex justify-between border border-[#F24D0D] w-full items-center text-[#F24D0D]">
-              <span>Acessar</span>
+            <button className="px-5 rounded-xl h-14 flex justify-between border border-[#F24D0D] hover:bg-[#FBF4F4] w-full items-center text-[#F24D0D]">
+              <span>Cadastrar</span>
               <MoveRight className="size-6" />
             </button>
           </div>
