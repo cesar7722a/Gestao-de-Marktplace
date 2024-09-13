@@ -1,14 +1,39 @@
 import { Eye, KeyRound, Mail, MoveRight } from "lucide-react";
+import { useRef } from "react";
 
 export function FormLogin() {
+  const mailIconRef = useRef<SVGSVGElement>(null);
+  const KeyRoundIconRef = useRef<SVGSVGElement>(null);
+
+  const inputFocos = () => {
+    if (mailIconRef.current)
+      if (mailIconRef.current.classList.contains("text-[#949494]")) {
+        mailIconRef.current.classList.remove("text-[#949494]");
+        mailIconRef.current.classList.add("text-[#F24D0D]");
+      } else {
+        mailIconRef.current.classList.remove("text-[#F24D0D]");
+      }
+  };
+
+  const inputPassWordFocos = () => {
+    if (KeyRoundIconRef.current)
+      if (KeyRoundIconRef.current.classList.contains("text-[#949494]")) {
+        KeyRoundIconRef.current.classList.remove("text-[#949494]");
+        KeyRoundIconRef.current.classList.add("text-[#F24D0D]");
+      } else {
+        KeyRoundIconRef.current.classList.remove("text-[#F24D0D]");
+      }
+  };
+
   return (
     <form className="space-y-12">
       <div className="space-y-5">
         <label htmlFor="" className="flex flex-col text-[#666666] text-xs">
           Email
           <span className="flex gap-2 px-2 py-2 border border-r-0 border-t-0 border-l-0 border-[#666666]">
-            <Mail className="size-6 text-[#949494]" />
+            <Mail ref={mailIconRef} className="size-6 text-[#949494]" />
             <input
+              onFocus={inputFocos}
               name="email"
               type="email"
               placeholder="Seu e-mail cadastrado"
@@ -20,8 +45,9 @@ export function FormLogin() {
         <label htmlFor="" className="flex flex-col text-[#666666] text-xs">
           Senha
           <span className="flex gap-2 px-2 py-2 border border-r-0 border-t-0 border-l-0 border-[#666666]">
-            <KeyRound className="size-6 text-[#949494]" />
+            <KeyRound ref={KeyRoundIconRef} className="size-6 text-[#949494]" />
             <input
+              onFocus={inputPassWordFocos}
               name="password"
               type="password"
               placeholder="Sua senha de acesso"
