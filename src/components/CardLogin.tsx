@@ -1,5 +1,6 @@
 import { MoveRight } from "lucide-react";
 import { FormLogin } from "../components/FormLogin";
+import { HeaderForm } from "./HeaderForm";
 
 export function CardLogin() {
   return (
@@ -7,14 +8,10 @@ export function CardLogin() {
       <div className="bg-white rounded-[32px] w-[494px]">
         <div className="px-20 py-10 space-y-12">
           <div className="space-y-12">
-            <div className="space-y-2">
-              <h1 className="text-2xl text-[#1D1D1D] font-semibold">
-                Acesse sua conta
-              </h1>
-              <h2 className="text-sm text-[#666666]">
-                Informe seu e-mail e senha para entrar
-              </h2>
-            </div>
+            <HeaderForm
+              h1="Acesse sua conta"
+              h2="Informe seu e-mail e senha para entrar"
+            />
           </div>
           <FormLogin />
           <div className="space-y-3">
