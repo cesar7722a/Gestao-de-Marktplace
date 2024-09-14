@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { CardLogin } from "../components/CardLogin";
+import { CardCadastro } from "../components/CardCadastro";
 
 export function Login() {
+  const [isLogin, setIsLogin] = useState<boolean>(true);
   return (
     <div className="h-screen">
       <div className="flex justify-between items-center">
@@ -12,7 +15,7 @@ export function Login() {
             <img src="../public/Background.png" alt="imagem background Login" />
           </figure>
         </div>
-        <CardLogin />
+        {isLogin ? <CardCadastro /> : <CardLogin />}
       </div>
     </div>
   );
