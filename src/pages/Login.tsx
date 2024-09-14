@@ -1,4 +1,4 @@
-import { CardLogin } from "../pages/CardLogin";
+import { CardLogin } from "../components/CardLogin";
 
 export function Login() {
   return (
