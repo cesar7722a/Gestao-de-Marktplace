@@ -1,4 +1,4 @@
-import { Eye, KeyRound, Mail, MoveRight } from "lucide-react";
+import { KeyRound, Mail, MoveRight } from "lucide-react";
 import { Input } from "./Input";
 
 export function FormLogin() {
