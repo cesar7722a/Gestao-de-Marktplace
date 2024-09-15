@@ -2,7 +2,11 @@ import { MoveRight } from "lucide-react";
 import { FormLogin } from "../components/FormLogin";
 import { HeaderForm } from "./HeaderForm";
 
-export function CardLogin() {
+type CardLoginProps = {
+  openCadastro: () => void;
+};
+
+export function CardLogin({ openCadastro }: CardLoginProps) {
   return (
     <div className="p-6">
       <div className="bg-white rounded-[32px] w-[494px]">
@@ -18,7 +22,10 @@ export function CardLogin() {
             <h3 className="text-base text-[#666666]">
               Ainda não tem uma conta?
             </h3>
-            <button className="px-5 rounded-xl h-14 flex justify-between border border-[#F24D0D] hover:bg-[#FBF4F4] w-full items-center text-[#F24D0D]">
+            <button
+              className="px-5 rounded-xl h-14 flex justify-between border border-[#F24D0D] hover:bg-[#FBF4F4] w-full items-center text-[#F24D0D]"
+              onClick={openCadastro}
+            >
               <span>Cadastrar</span>
               <MoveRight className="size-6" />
             </button>
