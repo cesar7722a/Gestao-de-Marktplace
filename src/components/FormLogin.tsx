@@ -1,7 +1,12 @@
 import { KeyRound, Mail, MoveRight } from "lucide-react";
 import { Input } from "./Input";
+// onAuxClick={pageIndex}
 
-export function FormLogin() {
+type FormLoginProps = {
+  pageIndex: (e: FormEvent<HTMLButtonElement>) => void;
+};
+
+export function FormLogin({ pageIndex }: FormLoginProps) {
   return (
     <form className="space-y-12">
       <div className="space-y-5">
@@ -21,7 +26,10 @@ export function FormLogin() {
           type="password"
         />
       </div>
-      <button className="px-5 rounded-xl h-14 flex justify-between bg-[#F24D0D] hover:bg-[#C43C08] w-full items-center text-white">
+      <button
+        onClick={pageIndex}
+        className="px-5 rounded-xl h-14 flex justify-between bg-[#F24D0D] hover:bg-[#C43C08] w-full items-center text-white"
+      >
         <span>Acessar</span>
         <MoveRight className="size-6" />
       </button>
