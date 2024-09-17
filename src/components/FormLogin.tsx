@@ -1,9 +1,9 @@
 import { KeyRound, Mail, MoveRight } from "lucide-react";
 import { Input } from "./Input";
-// onAuxClick={pageIndex}
+import { FormEvent } from "react";
 
 type FormLoginProps = {
-  pageIndex: (e: FormEvent<HTMLButtonElement>) => void;
+  pageIndex: (e: FormEvent) => void;
 };
 
 export function FormLogin({ pageIndex }: FormLoginProps) {
