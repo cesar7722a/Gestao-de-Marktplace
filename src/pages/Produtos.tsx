@@ -19,20 +19,25 @@ export function Produtos() {
           <div className="p-6 space-y-6 rounded-[20px] bg-white">
             <h2 className="text-lg text-[#666666]">Filtrar</h2>
             <div>
-              <form>
-                <Input
-                  Icon={Search}
-                  type="text"
-                  name="seach"
-                  placeholder="Pesquisar"
-                />
-                <div className="flex justify-between px-2 py-[14px] border border-r-0 border-t-0 border-l-0 border-[#666666] text-[#949494] cursor-pointer">
-                  <div className="flex gap-2">
-                    <Tag className="size-6" />
-                    <span>Status</span>
+              <form className="space-y-10">
+                <div>
+                  <Input
+                    Icon={Search}
+                    type="text"
+                    name="seach"
+                    placeholder="Pesquisar"
+                  />
+                  <div className="flex justify-between px-2 py-[14px] border border-r-0 border-t-0 border-l-0 border-[#666666] text-[#949494] cursor-pointer">
+                    <div className="flex gap-2">
+                      <Tag className="size-6" />
+                      <span>Status</span>
+                    </div>
+                    <ChevronDown className="size-6" />
                   </div>
-                  <ChevronDown className="size-6" />
                 </div>
+                <button className="px-5 w-full bg-[#F24D0D] hover:bg-[#C43C08] text-white rounded-[10px] h-14">
+                  Aplicar filtro
+                </button>
               </form>
             </div>
           </div>
