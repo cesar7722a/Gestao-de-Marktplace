@@ -1,6 +1,7 @@
-import { ChevronDown, Search, Tag } from "lucide-react";
+import { Search } from "lucide-react";
 import { Header } from "../components/Header";
 import { Input } from "../components/Input";
+import { Select } from "../components/Select";
 
 export function Produtos() {
   return (
@@ -27,13 +28,7 @@ export function Produtos() {
                     name="seach"
                     placeholder="Pesquisar"
                   />
-                  <div className="flex justify-between px-2 py-[14px] border border-r-0 border-t-0 border-l-0 border-[#666666] text-[#949494] cursor-pointer">
-                    <div className="flex gap-2">
-                      <Tag className="size-6" />
-                      <span>Status</span>
-                    </div>
-                    <ChevronDown className="size-6" />
-                  </div>
+                  <Select />
                 </div>
                 <button className="px-5 w-full bg-[#F24D0D] hover:bg-[#C43C08] text-white rounded-[10px] h-14">
                   Aplicar filtro
