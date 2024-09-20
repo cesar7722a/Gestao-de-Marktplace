@@ -36,6 +36,9 @@ export function Produtos() {
               </form>
             </div>
           </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="p-4 space-y-1"></div>
+          </div>
         </div>
       </div>
     </div>
