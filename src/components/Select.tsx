@@ -8,11 +8,6 @@ export function Select() {
         <span>Status</span>
       </div>
       <ChevronDown className="size-6" />
-      <ul className="absolute z-50 bottom-48 bg-black/60 py-2 rounded-lg W-[279px]">
-        <li className="px-4 text-sm text-[#666666] hover:text-[#F24D0D] w-full">
-          Item1
-        </li>
-      </ul>
     </div>
   );
 }
