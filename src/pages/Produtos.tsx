@@ -65,7 +65,7 @@ export function Produtos() {
   return (
     <div className="space-y-12">
       <Header />
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center pb-12">
         <div className="flex gap-8 flex-col">
           <div className="text-start">
             <h1 className="text-2xl font-semibold text-[rgb(29,29,29)]">
