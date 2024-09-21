@@ -4,7 +4,7 @@ import { Search } from "lucide-react";
 
 export function CardFilter() {
   return (
-    <div className="p-6 space-y-6 rounded-[20px] bg-white">
+    <div className="p-6 space-y-6 rounded-[20px] bg-white h-[306px]">
       <h2 className="text-lg text-[#666666]">Filtrar</h2>
       <div>
         <form className="space-y-10">

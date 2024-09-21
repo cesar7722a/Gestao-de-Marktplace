@@ -65,29 +65,31 @@ export function Produtos() {
   return (
     <div className="space-y-12">
       <Header />
-      <div className="max-w-5xl flex gap-8 flex-col justify-center items-center">
-        <div className="text-start">
-          <h1 className="text-2xl font-bold text-[rgb(29,29,29)]">
-            Seus produtos
-          </h1>
-          <h2 className="text-lg text-[#666666]">
-            Acesse gerencie a sua lista de produtos à venda
-          </h2>
-        </div>
+      <div className="flex justify-center items-center">
+        <div className="flex gap-8 flex-col">
+          <div className="text-start">
+            <h1 className="text-2xl font-semibold text-[rgb(29,29,29)]">
+              Seus produtos
+            </h1>
+            <h2 className="text-lg text-[#666666]">
+              Acesse gerencie a sua lista de produtos à venda
+            </h2>
+          </div>
 
-        <div className="flex gap-6">
-          <CardFilter />
+          <div className="flex gap-6">
+            <CardFilter />
 
-          <div className="grid grid-cols-2 gap-4">
-            {produts.map((produt) => (
-              <CardProdut
-                key={produt.id}
-                name={produt.name}
-                image={produt.image}
-                price={produt.price}
-                descri={produt.descri}
-              />
-            ))}
+            <div className="grid grid-cols-2 gap-4">
+              {produts.map((produt) => (
+                <CardProdut
+                  key={produt.id}
+                  name={produt.name}
+                  image={produt.image}
+                  price={produt.price}
+                  descri={produt.descri}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
