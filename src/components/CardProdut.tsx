@@ -1,3 +1,5 @@
+import { CardAnuncio } from "./CardAnuncio";
+
 type CardProdutProps = {
   image: string;
   name: string;
@@ -16,12 +18,7 @@ export function CardProdut({ name, image, price, descri }: CardProdutProps) {
           height={144}
           className="rounded-2xl"
         />
-        <span className="absolute z-50 top-1.5 right-2 flex gap-1 text-[10px] text-white">
-          <aside className="rounded-full px-2 py-1  bg-[#009CF0] ">
-            anunciado
-          </aside>
-          <aside className="rounded-full px-2 py-1 bg-[#3D3D3D]">móvel</aside>
-        </span>
+        <CardAnuncio />
       </figure>
       <div className="px-3 pt-3 pb-4 space-y-2">
         <div className="flex text-[#1D1D1D]">
