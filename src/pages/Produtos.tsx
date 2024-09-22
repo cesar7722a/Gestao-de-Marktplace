@@ -1,4 +1,3 @@
-import { Header } from "../components/Header";
 import { useState } from "react";
 import { CardProdut } from "../components/CardProdut";
 import { CardFilter } from "../components/CardFilter";
