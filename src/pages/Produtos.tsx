@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CardProdut } from "../components/CardProdut";
 import { CardFilter } from "../components/CardFilter";
 import { useNavigate } from "react-router-dom";
+import { HeaderText } from "../components/headerText";
 
 type ProdutosProps = {
   id: number;
@@ -72,14 +73,10 @@ export function Produtos() {
     <div className="space-y-12">
       <div className="flex justify-center items-center pb-12">
         <div className="flex gap-8 flex-col">
-          <div className="text-start">
-            <h1 className="text-2xl font-semibold text-[rgb(29,29,29)]">
-              Seus produtos
-            </h1>
-            <h2 className="text-lg text-[#666666]">
-              Acesse gerencie a sua lista de produtos à venda
-            </h2>
-          </div>
+          <HeaderText
+            headerPrimary="Seus produtos"
+            headerSecundary="Acesse gerencie a sua lista de produtos à venda"
+          />
 
           <div className="flex gap-6">
             <CardFilter />
