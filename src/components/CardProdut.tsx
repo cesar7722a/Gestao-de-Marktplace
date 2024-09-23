@@ -5,11 +5,23 @@ type CardProdutProps = {
   name: string;
   price: number;
   descri: string;
+  id: number;
+  changeToPageEdit: (number: number) => void;
 };
 
-export function CardProdut({ name, image, price, descri }: CardProdutProps) {
+export function CardProdut({
+  name,
+  image,
+  price,
+  descri,
+  changeToPageEdit,
+  id,
+}: CardProdutProps) {
   return (
-    <div className="p-1 space-y-1 bg-white rounded-[20px] w-[331px] border hover:border-[#5EC5FD]">
+    <div
+      onClick={() => changeToPageEdit(id)}
+      className="p-1 space-y-1 bg-white rounded-[20px] w-[331px] border hover:border-[#5EC5FD] cursor-pointer"
+    >
       <figure className="relative">
         <img
           src={image}

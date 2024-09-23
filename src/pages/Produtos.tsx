@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CardProdut } from "../components/CardProdut";
 import { CardFilter } from "../components/CardFilter";
+import { useNavigate } from "react-router-dom";
 
 type ProdutosProps = {
   id: number;
@@ -61,6 +62,12 @@ export function Produtos() {
     },
   ]);
 
+  const navigate = useNavigate();
+
+  const changeToPageEdit = (id: number) => {
+    navigate(`/edite-produto/${id}`);
+  };
+
   return (
     <div className="space-y-12">
       <div className="flex justify-center items-center pb-12">
@@ -80,7 +87,9 @@ export function Produtos() {
             <div className="grid grid-cols-2 gap-4">
               {produts.map((produt) => (
                 <CardProdut
+                  changeToPageEdit={changeToPageEdit}
                   key={produt.id}
+                  id={produt.id}
                   name={produt.name}
                   image={produt.image}
                   price={produt.price}
