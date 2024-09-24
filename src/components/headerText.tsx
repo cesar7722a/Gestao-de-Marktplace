@@ -8,7 +8,7 @@ export function HeaderText({
   headerSecundary,
 }: HeaderTextProps) {
   return (
-    <div className="text-start">
+    <div className="text-start flex-1">
       <h1 className="text-2xl font-semibold text-[rgb(29,29,29)]">
         {headerPrimary}
       </h1>

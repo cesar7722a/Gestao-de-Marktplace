@@ -3,6 +3,7 @@ import { CardProdut } from "../components/CardProdut";
 import { CardFilter } from "../components/CardFilter";
 import { useNavigate } from "react-router-dom";
 import { HeaderText } from "../components/headerText";
+import { Container } from "../components/container";
 
 type ProdutosProps = {
   id: number;
@@ -70,33 +71,28 @@ export function Produtos() {
   };
 
   return (
-    <div className="space-y-12">
-      <div className="flex justify-center items-center pb-12">
-        <div className="flex gap-8 flex-col">
-          <HeaderText
-            headerPrimary="Seus produtos"
-            headerSecundary="Acesse gerencie a sua lista de produtos à venda"
-          />
+    <Container>
+      <HeaderText
+        headerPrimary="Seus produtos"
+        headerSecundary="Acesse gerencie a sua lista de produtos à venda"
+      />
+      <div className="flex gap-6">
+        <CardFilter />
 
-          <div className="flex gap-6">
-            <CardFilter />
-
-            <div className="grid grid-cols-2 gap-4">
-              {produts.map((produt) => (
-                <CardProdut
-                  changeToPageEdit={changeToPageEdit}
-                  key={produt.id}
-                  id={produt.id}
-                  name={produt.name}
-                  image={produt.image}
-                  price={produt.price}
-                  descri={produt.descri}
-                />
-              ))}
-            </div>
-          </div>
+        <div className="grid grid-cols-2 gap-4">
+          {produts.map((produt) => (
+            <CardProdut
+              changeToPageEdit={changeToPageEdit}
+              key={produt.id}
+              id={produt.id}
+              name={produt.name}
+              image={produt.image}
+              price={produt.price}
+              descri={produt.descri}
+            />
+          ))}
         </div>
       </div>
-    </div>
+    </Container>
   );
 }

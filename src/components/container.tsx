@@ -6,8 +6,8 @@ type ContainerProps = {
 
 export function Container({ children }: ContainerProps) {
   return (
-    <div className="space-y-12">
-      <div className="flex justify-center items-center pb-12">
+    <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center pb-12 max-w-[1030px]">
         <div className="flex gap-8 flex-col">{children}</div>
       </div>
     </div>
