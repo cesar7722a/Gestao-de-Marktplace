@@ -1,5 +1,6 @@
 import { ChartNoAxesCombined, Package, Plus } from "lucide-react";
 import { Menu } from "./Menu";
+import { Link } from "react-router-dom";
 
 export function Header() {
   return (
@@ -12,10 +13,13 @@ export function Header() {
         <Menu title="Produtos" Icon={Package} />
       </div>
       <div className="flex items-center gap-3">
-        <button className="flex gap-2 h-10 px-4 rounded-[10px] text-white bg-[#F24D0D] items-center hover:bg-[#C43C08]">
+        <Link
+          to={"/add-produto"}
+          className="flex gap-2 h-10 px-4 rounded-[10px] text-white bg-[#F24D0D] items-center hover:bg-[#C43C08]"
+        >
           <Plus />
           <span>Novo produto</span>
-        </button>
+        </Link>
         <figure>
           <img src="../../public/User.png" alt="user imagem" />
         </figure>

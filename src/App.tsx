@@ -3,6 +3,7 @@ import { Login } from "./pages/Login";
 import { Produtos } from "./pages/Produtos";
 import { LayourtRooter } from "./components/Layourt";
 import { EditeProdutos } from "./pages/edite-produto";
+import { AddProduto } from "./pages/addProduto";
 
 export function App() {
   return (
@@ -12,6 +13,7 @@ export function App() {
         <Route element={<LayourtRooter />}>
           <Route path="/produtos" element={<Produtos />} />
           <Route path="/edite-produto/:id" element={<EditeProdutos />} />
+          <Route path="/add-produto" element={<AddProduto />} />
         </Route>
       </Routes>
     </BrowserRouter>
