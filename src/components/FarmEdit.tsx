@@ -44,8 +44,8 @@ export function FormEdit() {
             <textarea
               name="descri"
               id=""
-              cols={10}
-              className="max-w-[539px] h-40 text-[#3D3D3D] px-2 outline-none"
+              cols={5}
+              className="max-w-[539px] h-20 text-[#3D3D3D] px-2 outline-none"
               value="Sofá revestido em couro legítimo, com estrutura em madeira
           maciça e pés em metal cromado"
             />
