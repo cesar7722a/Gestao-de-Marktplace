@@ -19,7 +19,7 @@ export function Produtos() {
   const navigate = useNavigate();
 
   const changeToPageEdit = (id: number) => {
-    navigate(`/edite-produto/${id}`);
+    navigate(`/edite-produto/:?id=${id}`);
   };
 
   return (
