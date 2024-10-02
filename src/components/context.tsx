@@ -1,9 +1,13 @@
-import { createContext, ReactNode, useState } from "react";
-import { MycontextTypes, ProdutosProps } from "../type/types";
+import { createContext, useState } from "react";
+import {
+  MycontextProviderProps,
+  MycontextTypes,
+  ProdutosProps,
+} from "../type/types";
 
 export const Mycontext = createContext<MycontextTypes | undefined>(undefined);
 
-export function MycontextProvider({ children }: ReactNode) {
+export function MycontextProvider({ children }: MycontextProviderProps) {
   const [produts, setProducts] = useState<ProdutosProps[]>([
     {
       id: 0,
@@ -53,4 +57,19 @@ export function MycontextProvider({ children }: ReactNode) {
         "Carrinho de brinquedo na cor amarela, feito de metal, com detalhes realistas. ",
     },
   ]);
+  function addProduto({ descri, id, image, name, price }: ProdutosProps) {
+    const newProduto = {
+      descri: descri,
+      id: id,
+      image: image,
+      name: name,
+      price: price,
+    };
+    setProducts([...produts, newProduto]);
+  }
+  return (
+    <Mycontext.Provider value={{ addProduto, produts, setProducts }}>
+      {children}
+    </Mycontext.Provider>
+  );
 }
