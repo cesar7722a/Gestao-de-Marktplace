@@ -65,7 +65,6 @@ export function MycontextProvider({ children }: MycontextProviderProps) {
       name: name,
       price: price,
     };
-    setProducts([...produts, newProduto]);
   }
   return (
     <Mycontext.Provider value={{ addProduto, produts, setProducts }}>
