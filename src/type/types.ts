@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 
 export type ProdutosProps = {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
-  descri: string;
+  id?: number;
+  name: string | undefined;
+  price: number | undefined;
+  image?: string | undefined;
+  descri: string | undefined;
 };
 
 export type MycontextTypes = {

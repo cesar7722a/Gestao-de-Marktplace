@@ -1,6 +1,7 @@
 import { ChevronDown, X } from "lucide-react";
+import { ProdutosProps } from "../type/types";
 
-export function FormEdit() {
+export function FormEdit({ descri, name, price }: ProdutosProps) {
   return (
     <div className="p-6 space-y-6 bg-white rounded-[20px] w-[591px]">
       <div className="flex gap-2">
@@ -18,7 +19,7 @@ export function FormEdit() {
               <span className="text-xs text-[#666]">Título</span>
               <input
                 type="text"
-                value="Sofá"
+                value={name}
                 className="text-[#3D3D3D] outline-none"
               />
             </label>
@@ -29,7 +30,7 @@ export function FormEdit() {
                 <aside className="text-[#F24D0D]">R$</aside>
                 <input
                   type="text"
-                  value={1200.9}
+                  value={price}
                   className=" outline-none max-w-40"
                 />
               </span>
@@ -46,8 +47,7 @@ export function FormEdit() {
               id=""
               cols={5}
               className="max-w-[539px] h-20 text-[#3D3D3D] px-2 outline-none"
-              value="Sofá revestido em couro legítimo, com estrutura em madeira
-          maciça e pés em metal cromado"
+              value={descri}
             />
           </label>
 

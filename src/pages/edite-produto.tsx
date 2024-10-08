@@ -2,7 +2,7 @@ import { Container } from "../components/container";
 import { HeaderEdit } from "../components/HeaderEdit";
 import { FormEdit } from "../components/FarmEdit";
 import { useContext } from "react";
-import { Mycontext } from "../components/context";
+import { Mycontext } from "../context/context";
 import { useSearchParams } from "react-router-dom";
 
 export function EditeProdutos() {
@@ -32,7 +32,11 @@ export function EditeProdutos() {
                 className="rounded-[20px]"
               />
             </figure>
-            <FormEdit />
+            <FormEdit
+              descri={produtoTOedit?.descri}
+              price={produtoTOedit?.price}
+              name={produtoTOedit?.name}
+            />
           </div>
         </>
       }

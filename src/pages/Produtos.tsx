@@ -4,7 +4,7 @@ import { CardFilter } from "../components/CardFilter";
 import { useNavigate } from "react-router-dom";
 import { HeaderText } from "../components/headerText";
 import { Container } from "../components/container";
-import { Mycontext } from "../components/context";
+import { Mycontext } from "../context/context";
 
 export function Produtos() {
   const context = useContext(Mycontext);
