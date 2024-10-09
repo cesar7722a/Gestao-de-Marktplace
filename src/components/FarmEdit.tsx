@@ -62,11 +62,13 @@ export function FormEdit({ descri, name, price }: ProdutosProps) {
           </label>
         </div>
         <div className="flex gap-3">
-          <button className="px-5 rounded-xl h-12 border border-[#F24D0D] hover:bg-[#FBF4F4] w-full items-center text-[#F24D0D]">
+          <ButtonForm size="lg" color="secondary">
             Cancelar
-          </button>
+          </ButtonForm>
 
-          <ButtonForm size="lg">Salvar e atualizar</ButtonForm>
+          <ButtonForm size="lg" color="primary">
+            Salvar e atualizar
+          </ButtonForm>
         </div>
       </form>
     </div>

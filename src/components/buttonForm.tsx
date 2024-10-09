@@ -6,7 +6,7 @@ const button = tv({
   variants: {
     color: {
       primary: "bg-bg text-white hover:bg-bgDark",
-      secondary: "text-bg border border-bg hover:bg-bgBase",
+      secondary: "bg-white text-bg border border-bg hover:bg-bgBase",
     },
     size: {
       sm: "text-sm",
@@ -31,9 +31,9 @@ type ButtonProps = HTMLAttributes<HTMLButtonElement> &
     children: ReactNode;
   };
 
-export function ButtonForm({ children }: ButtonProps) {
+export function ButtonForm({ children, size, color, ...props }: ButtonProps) {
   return (
-    <button className={button({ size: "lg", color: "primary" })}>
+    <button {...props} className={button({ size, color })}>
       {children}
     </button>
   );
