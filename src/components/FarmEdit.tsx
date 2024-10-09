@@ -1,5 +1,6 @@
 import { ChevronDown, X } from "lucide-react";
 import { ProdutosProps } from "../type/types";
+import { ButtonForm } from "./buttonForm";
 
 export function FormEdit({ descri, name, price }: ProdutosProps) {
   return (
@@ -64,9 +65,8 @@ export function FormEdit({ descri, name, price }: ProdutosProps) {
           <button className="px-5 rounded-xl h-12 border border-[#F24D0D] hover:bg-[#FBF4F4] w-full items-center text-[#F24D0D]">
             Cancelar
           </button>
-          <button className="px-5 rounded-xl h-12 bg-[#F24D0D] hover:bg-[#C43C08] w-full items-center text-white">
-            Salvar e atualizar
-          </button>
+
+          <ButtonForm size="lg">Salvar e atualizar</ButtonForm>
         </div>
       </form>
     </div>

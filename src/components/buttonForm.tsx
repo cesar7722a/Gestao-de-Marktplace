@@ -2,16 +2,16 @@ import { HTMLAttributes, ReactNode } from "react";
 import { tv, VariantProps } from "tailwind-variants";
 
 const button = tv({
-  base: "font-medium bg-blue-500 text-white rounded-full active:opacity-80",
+  base: "bg-bg text-white rounded-xl text-center",
   variants: {
     color: {
-      primary: "bg-blue-500 text-white",
-      secondary: "bg-purple-500 text-white",
+      primary: "bg-bg text-white hover:bg-bgDark",
+      secondary: "text-bg border border-bg hover:bg-bgBase",
     },
     size: {
       sm: "text-sm",
       md: "text-base",
-      lg: "px-4 py-3 text-lg",
+      lg: "px-5 h-12 w-full",
     },
   },
   compoundVariants: [
@@ -33,7 +33,7 @@ type ButtonProps = HTMLAttributes<HTMLButtonElement> &
 
 export function ButtonForm({ children }: ButtonProps) {
   return (
-    <button className={button({ size: "sm", color: "secondary" })}>
+    <button className={button({ size: "lg", color: "primary" })}>
       {children}
     </button>
   );
