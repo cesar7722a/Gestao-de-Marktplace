@@ -29,11 +29,18 @@ const button = tv({
 type ButtonProps = HTMLAttributes<HTMLButtonElement> &
   VariantProps<typeof button> & {
     children: ReactNode;
+    type?: "submit" | "reset" | "button" | undefined;
   };
 
-export function ButtonForm({ children, size, color, ...props }: ButtonProps) {
+export function ButtonForm({
+  children,
+  size,
+  color,
+  type,
+  ...props
+}: ButtonProps) {
   return (
-    <button {...props} className={button({ size, color })}>
+    <button type={type} {...props} className={button({ size, color })}>
       {children}
     </button>
   );

@@ -13,7 +13,7 @@ export function FormEdit({ descri, name, price }: ProdutosProps) {
           anunciado
         </span>
       </div>
-      <form className="space-y-20">
+      <form onSubmit={} className="space-y-20">
         <div className="flex flex-col gap-5">
           <span className="flex gap-5">
             <label className="flex-1 flex flex-col gap-2 border border-t-0 border-r-0 border-l-0">
@@ -28,7 +28,7 @@ export function FormEdit({ descri, name, price }: ProdutosProps) {
             <label className="pb-2 flex flex-col gap-2 max-w-[200px] border border-t-0 border-r-0 border-l-0">
               <span className="text-xs text-[#666]">Valor</span>
               <span className="flex gap-2 text-[#3D3D3D]">
-                <aside className="text-[#F24D0D]">R$</aside>
+                <aside className="text-bg">R$</aside>
                 <input
                   type="text"
                   value={price}
@@ -66,7 +66,7 @@ export function FormEdit({ descri, name, price }: ProdutosProps) {
             Cancelar
           </ButtonForm>
 
-          <ButtonForm size="lg" color="primary">
+          <ButtonForm type="submit" size="lg" color="primary">
             Salvar e atualizar
           </ButtonForm>
         </div>
