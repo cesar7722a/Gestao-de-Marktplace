@@ -1,9 +1,15 @@
 import { Container } from "../components/container";
 import { HeaderEdit } from "../components/HeaderEdit";
 import { FormEdit } from "../components/FarmEdit";
-import { FormEvent, useContext } from "react";
+import { useContext, useState } from "react";
 import { Mycontext } from "../context/context";
 import { useSearchParams } from "react-router-dom";
+
+interface FormDataProps {
+  descri?: string | undefined;
+  name?: string | undefined;
+  price?: number | undefined;
+}
 
 export function EditeProdutos() {
   const [searchParams] = useSearchParams();
@@ -19,10 +25,22 @@ export function EditeProdutos() {
   const { produts } = context;
   const produtoTOedit = produts.find((a) => a.id === Number(idUrl));
 
-  const editProdut = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    console.log(formData.get("descri"));
+  const [formData, setFormData] = useState<FormDataProps>({
+    name: produtoTOedit?.name,
+    descri: produtoTOedit?.descri,
+    price: produtoTOedit?.price,
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
   return (
@@ -39,7 +57,8 @@ export function EditeProdutos() {
               />
             </figure>
             <FormEdit
-              editProdut={editProdut}
+              handleChange={handleChange}
+              formData={formData}
               descri={produtoTOedit?.descri}
               price={produtoTOedit?.price}
               name={produtoTOedit?.name}

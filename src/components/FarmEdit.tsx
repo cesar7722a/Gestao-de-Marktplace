@@ -1,15 +1,25 @@
 import { ChevronDown, X } from "lucide-react";
 import { ButtonForm } from "./buttonForm";
-import { FormEvent } from "react";
+
+interface FormDataProps {
+  descri?: string | undefined;
+  name?: string | undefined;
+  price?: number | undefined;
+}
 
 interface FormProps {
   descri?: string | undefined;
   name?: string | undefined;
   price?: number | undefined;
-  editProdut: (event: FormEvent<HTMLFormElement>) => void;
+  formData: FormDataProps;
+  handleChange: (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => void;
 }
 
-export function FormEdit({ descri, name, price, editProdut }: FormProps) {
+export function FormEdit({ formData, handleChange }: FormProps) {
   return (
     <div className="p-6 space-y-6 bg-white rounded-[20px] w-[591px]">
       <div className="flex gap-2">
@@ -20,15 +30,17 @@ export function FormEdit({ descri, name, price, editProdut }: FormProps) {
           anunciado
         </span>
       </div>
-      <form onSubmit={editProdut} className="space-y-20">
+      <form className="space-y-20">
         <div className="flex flex-col gap-5">
           <span className="flex gap-5">
             <label className="flex-1 flex flex-col gap-2 border border-t-0 border-r-0 border-l-0">
               <span className="text-xs text-[#666]">Título</span>
               <input
                 type="text"
-                value={name}
+                name="name"
+                value={formData.name}
                 className="text-[#3D3D3D] outline-none"
+                onChange={handleChange}
               />
             </label>
 
@@ -38,8 +50,10 @@ export function FormEdit({ descri, name, price, editProdut }: FormProps) {
                 <aside className="text-bg">R$</aside>
                 <input
                   type="text"
-                  value={price}
+                  name="price"
+                  value={formData.price}
                   className=" outline-none max-w-40"
+                  onChange={handleChange}
                 />
               </span>
             </label>
@@ -52,10 +66,11 @@ export function FormEdit({ descri, name, price, editProdut }: FormProps) {
             <span className="text-xs text-[#666]">Descrição</span>
             <textarea
               name="descri"
+              value={formData.descri}
               id=""
               cols={5}
               className="max-w-[539px] h-20 text-[#3D3D3D] px-2 outline-none"
-              value={descri}
+              onChange={handleChange}
             />
           </label>
 
