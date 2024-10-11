@@ -13,8 +13,8 @@ export function App() {
         <Route element={<LayourtRooter />}>
           <Route path="/produtos" element={<Produtos />} />
           <Route path="/edite-produto/:id" element={<EditeProdutos />} />
-          <Route path="/add-produto" element={<AddProduto />} />
         </Route>
+        <Route path="/add-produto" element={<AddProduto />} />
       </Routes>
     </BrowserRouter>
   );
