@@ -1,7 +1,7 @@
 import { Container } from "../components/container";
 import { HeaderEdit } from "../components/HeaderEdit";
 import { FormEdit } from "../components/FarmEdit";
-import { useContext } from "react";
+import { FormEvent, useContext } from "react";
 import { Mycontext } from "../context/context";
 import { useSearchParams } from "react-router-dom";
 
@@ -19,6 +19,12 @@ export function EditeProdutos() {
   const { produts } = context;
   const produtoTOedit = produts.find((a) => a.id === Number(idUrl));
 
+  const editProdut = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    console.log(formData.get("descri"));
+  };
+
   return (
     <Container>
       {
@@ -33,6 +39,7 @@ export function EditeProdutos() {
               />
             </figure>
             <FormEdit
+              editProdut={editProdut}
               descri={produtoTOedit?.descri}
               price={produtoTOedit?.price}
               name={produtoTOedit?.name}
