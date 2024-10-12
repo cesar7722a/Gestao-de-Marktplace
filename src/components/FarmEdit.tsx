@@ -1,12 +1,14 @@
 import { ChevronDown, X } from "lucide-react";
 import { ButtonForm } from "./buttonForm";
 import { FormDataProps } from "../type/types";
+import { FormEvent } from "react";
 
 interface FormProps {
   descri?: string | undefined;
   name?: string | undefined;
   price?: number | undefined;
   formData: FormDataProps;
+  handleEdit: (e: FormEvent<HTMLFormElement>) => void;
   handleChange: (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -14,7 +16,7 @@ interface FormProps {
   ) => void;
 }
 
-export function FormEdit({ formData, handleChange }: FormProps) {
+export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
   return (
     <div className="p-6 space-y-6 bg-white rounded-[20px] w-[591px]">
       <div className="flex gap-2">
@@ -25,7 +27,7 @@ export function FormEdit({ formData, handleChange }: FormProps) {
           anunciado
         </span>
       </div>
-      <form className="space-y-20">
+      <form onSubmit={handleEdit} className="space-y-20">
         <div className="flex flex-col gap-5">
           <span className="flex gap-5">
             <label className="flex-1 flex flex-col gap-2 border border-t-0 border-r-0 border-l-0">
