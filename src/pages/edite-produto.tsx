@@ -4,12 +4,7 @@ import { FormEdit } from "../components/FarmEdit";
 import { useContext, useState } from "react";
 import { Mycontext } from "../context/context";
 import { useSearchParams } from "react-router-dom";
-
-interface FormDataProps {
-  descri?: string | undefined;
-  name?: string | undefined;
-  price?: number | undefined;
-}
+import { ProdutosProps } from "../type/types";
 
 export function EditeProdutos() {
   const [searchParams] = useSearchParams();
@@ -25,7 +20,7 @@ export function EditeProdutos() {
   const { produts } = context;
   const produtoTOedit = produts.find((a) => a.id === Number(idUrl));
 
-  const [formData, setFormData] = useState<FormDataProps>({
+  const [formData, setFormData] = useState<ProdutosProps>({
     name: produtoTOedit?.name,
     descri: produtoTOedit?.descri,
     price: produtoTOedit?.price,

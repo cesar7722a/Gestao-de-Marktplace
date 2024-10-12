@@ -1,11 +1,6 @@
 import { ChevronDown, X } from "lucide-react";
 import { ButtonForm } from "./buttonForm";
-
-interface FormDataProps {
-  descri?: string | undefined;
-  name?: string | undefined;
-  price?: number | undefined;
-}
+import { FormDataProps } from "../type/types";
 
 interface FormProps {
   descri?: string | undefined;

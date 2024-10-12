@@ -20,3 +20,9 @@ export type MycontextTypes = {
 export type MycontextProviderProps = {
   children: ReactNode;
 };
+
+export interface FormDataProps {
+  descri?: string | undefined;
+  name?: string | undefined;
+  price?: number | undefined;
+}
