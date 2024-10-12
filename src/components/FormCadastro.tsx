@@ -19,7 +19,7 @@ export function FormCadastro() {
           className=" w-[120px] h-[120px] p-11 rounded-xl bg-[#F5EAEA] cursor-pointer flex"
         >
           <input name="foto" type="file" className="hidden" />
-          <ImageUp className="size-6 text-[#F24D0D]" />
+          <ImageUp className="size-6 text-bg" />
         </label>
 
         <Input
@@ -66,7 +66,7 @@ export function FormCadastro() {
         />
       </div>
 
-      <button className="px-5 rounded-xl h-14 flex justify-between bg-[#F24D0D] hover:bg-[#C43C08] w-full items-center text-white">
+      <button className="px-5 rounded-xl h-14 flex justify-between bg-bg hover:bg-bgDark w-full items-center text-white">
         <span>Cadastrar</span>
         <MoveRight className="size-6" />
       </button>
