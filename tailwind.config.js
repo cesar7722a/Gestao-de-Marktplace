@@ -10,6 +10,8 @@ export default {
         bgDark: "#C43C08",
         bg: "#F24D0D",
         bgBase: "#FBF4F4",
+        textPrimary: "#666",
+        textSecondary: "#3D3D3D",
       },
     },
   },

@@ -26,7 +26,7 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
   return (
     <div className="p-6 space-y-6 bg-white rounded-[20px] w-[591px]">
       <div className="flex gap-2">
-        <h1 className="text-lg text-[#666666] flex-1 font-medium">
+        <h1 className="text-lg text-textPrimary flex-1 font-medium">
           Dados do produto
         </h1>
         <span className="px-2 py-1 rounded-full bg-[#009CF0] text-white">
@@ -37,7 +37,7 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
         <div className="flex flex-col gap-5">
           <span className="flex gap-5">
             <label className="flex-1 flex flex-col gap-2 border border-t-0 border-r-0 border-l-0">
-              <span className="text-xs text-[#666]">Título</span>
+              <span className="text-xs text-textPrimary">Título</span>
               <input
                 type="text"
                 name="name"
@@ -48,8 +48,8 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
             </label>
 
             <label className="pb-2 flex flex-col gap-2 max-w-[200px] border border-t-0 border-r-0 border-l-0">
-              <span className="text-xs text-[#666]">Valor</span>
-              <span className="flex gap-2 text-[#3D3D3D]">
+              <span className="text-xs text-textPrimary">Valor</span>
+              <span className="flex gap-2 text-textSecondary">
                 <aside className="text-bg">R$</aside>
                 <input
                   type="text"
@@ -66,21 +66,21 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
             htmlFor=""
             className="flex flex-col gap-2 border border-t-0 border-r-0 border-l-0 pb-2"
           >
-            <span className="text-xs text-[#666]">Descrição</span>
+            <span className="text-xs text-textPrimary">Descrição</span>
             <textarea
               name="descri"
               value={formData.descri}
               id=""
               cols={5}
-              className="max-w-[539px] h-20 text-[#3D3D3D] px-2 outline-none"
+              className="max-w-[539px] h-20 text-textSecondary px-2 outline-none"
               onChange={handleChange}
             />
           </label>
 
           <label htmlFor="" className="border border-t-0 border-r-0 border-l-0">
-            <span className="text-xs text-[#666]">Categoria</span>
-            <span className="px-[2px] py-[14px] flex text-[#666]">
-              <aside className="flex-1 text-[#3D3D3D]">Móvel</aside>
+            <span className="text-xs text-textPrimary">Categoria</span>
+            <span className="px-[2px] py-[14px] flex text-textPrimary">
+              <aside className="flex-1 text-textSecondary">Móvel</aside>
               <X className="size-6 cursor-pointer p-1 bg-[#F5EAEA] rounded-full" />
               <ChevronDown className="size-6 cursor-pointer" />
             </span>
