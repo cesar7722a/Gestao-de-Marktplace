@@ -2,6 +2,7 @@ import { ChevronDown, X } from "lucide-react";
 import { ButtonForm } from "./buttonForm";
 import { FormDataProps } from "../type/types";
 import { FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface FormProps {
   descri?: string | undefined;
@@ -17,6 +18,11 @@ interface FormProps {
 }
 
 export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
+  const navigate = useNavigate();
+  const pageIndex = () => {
+    navigate("/Produtos");
+  };
+
   return (
     <div className="p-6 space-y-6 bg-white rounded-[20px] w-[591px]">
       <div className="flex gap-2">
@@ -81,7 +87,12 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
           </label>
         </div>
         <div className="flex gap-3">
-          <ButtonForm size="lg" color="secondary">
+          <ButtonForm
+            onClick={pageIndex}
+            type="button"
+            size="lg"
+            color="secondary"
+          >
             Cancelar
           </ButtonForm>
 
