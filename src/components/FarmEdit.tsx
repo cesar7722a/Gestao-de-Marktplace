@@ -1,4 +1,4 @@
-import { ChevronDown, X } from "lucide-react";
+import { ChevronDown, ChevronUp, X } from "lucide-react";
 import { ButtonForm } from "./buttonForm";
 import { FormDataProps } from "../type/types";
 import { FormEvent, useState } from "react";
@@ -33,8 +33,18 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
     { name: "Vestuário", isSelect: false },
   ]);
 
+  const [selectIsOpen, setSelectIsOpen] = useState<boolean>(false);
+
+  const handleSelect = () => {
+    if (selectIsOpen) {
+      setSelectIsOpen(false);
+    } else {
+      setSelectIsOpen(true);
+    }
+  };
+
   return (
-    <div className="p-6 space-y-6 bg-white rounded-[20px] w-[591px] pb-12">
+    <div className="p-6 space-y-6 bg-white rounded-[20px] w-[591px]">
       <div className="flex gap-2">
         <h1 className="text-lg text-textPrimary flex-1 font-medium">
           Dados do produto
@@ -80,17 +90,26 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
 
           <label htmlFor="" className="border border-t-0 border-r-0 border-l-0">
             <span className="text-xs text-textPrimary">Categoria</span>
-            <span className="relative  py-[14px] flex text-textPrimary">
+            <span
+              onClick={handleSelect}
+              className="relative  py-[14px] flex text-textPrimary cursor-pointer"
+            >
               <aside className="flex-1 text-textSecondary">Móvel</aside>
               <X className="size-6 cursor-pointer p-1 bg-[#F5EAEA] rounded-full" />
-              <ChevronDown className="size-6 cursor-pointer" />
-              <ul className="absolute bg-white flex flex-col gap-2 py-3 px-6 w-full top-16 rounded-lg">
-                {options.map((option) => (
-                  <OptionSelect isSelect={option.isSelect}>
-                    {option.name}
-                  </OptionSelect>
-                ))}
-              </ul>
+              {selectIsOpen ? (
+                <ChevronUp className="size-6 cursor-pointer" />
+              ) : (
+                <ChevronDown className="size-6 cursor-pointer" />
+              )}
+              {selectIsOpen && (
+                <ul className="absolute bg-white flex flex-col gap-2 py-3 px-6 w-full top-16 rounded-lg">
+                  {options.map((option) => (
+                    <OptionSelect isSelect={option.isSelect}>
+                      {option.name}
+                    </OptionSelect>
+                  ))}
+                </ul>
+              )}
             </span>
           </label>
         </div>
