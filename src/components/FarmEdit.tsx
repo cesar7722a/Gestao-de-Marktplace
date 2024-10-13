@@ -4,6 +4,7 @@ import { FormDataProps } from "../type/types";
 import { FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { TextArea } from "./TextArea";
+import { OptionSelect } from "./OptionSelect";
 
 interface FormProps {
   descri?: string | undefined;
@@ -25,7 +26,7 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
   };
 
   return (
-    <div className="p-6 space-y-6 bg-white rounded-[20px] w-[591px]">
+    <div className="p-6 space-y-6 bg-white rounded-[20px] w-[591px] pb-12">
       <div className="flex gap-2">
         <h1 className="text-lg text-textPrimary flex-1 font-medium">
           Dados do produto
@@ -71,10 +72,18 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
 
           <label htmlFor="" className="border border-t-0 border-r-0 border-l-0">
             <span className="text-xs text-textPrimary">Categoria</span>
-            <span className="px-[2px] py-[14px] flex text-textPrimary">
+            <span className="relative  py-[14px] flex text-textPrimary">
               <aside className="flex-1 text-textSecondary">Móvel</aside>
               <X className="size-6 cursor-pointer p-1 bg-[#F5EAEA] rounded-full" />
               <ChevronDown className="size-6 cursor-pointer" />
+              <ul className="absolute bg-white flex flex-col gap-2 py-3 px-6 w-full top-16 rounded-lg">
+                <OptionSelect Children="Brinquedo" />
+                <OptionSelect Children="Móvel" />
+                <OptionSelect Children="Papelaria" />
+                <OptionSelect Children="Saúde & Beleza" />
+                <OptionSelect Children="Utensílio" />
+                <OptionSelect Children="Vestuário" />
+              </ul>
             </span>
           </label>
         </div>
