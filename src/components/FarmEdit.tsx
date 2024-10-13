@@ -3,6 +3,7 @@ import { ButtonForm } from "./buttonForm";
 import { FormDataProps } from "../type/types";
 import { FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
+import { TextArea } from "./TextArea";
 
 interface FormProps {
   descri?: string | undefined;
@@ -62,20 +63,11 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
             </label>
           </span>
 
-          <label
-            htmlFor=""
-            className="flex flex-col gap-2 border border-t-0 border-r-0 border-l-0 pb-2"
-          >
-            <span className="text-xs text-textPrimary">Descrição</span>
-            <textarea
-              name="descri"
-              value={formData.descri}
-              id=""
-              cols={5}
-              className="max-w-[539px] h-20 text-textSecondary px-2 outline-none"
-              onChange={handleChange}
-            />
-          </label>
+          <TextArea
+            name="descri"
+            value={formData.descri}
+            handleChange={handleChange}
+          />
 
           <label htmlFor="" className="border border-t-0 border-r-0 border-l-0">
             <span className="text-xs text-textPrimary">Categoria</span>
