@@ -1,7 +1,7 @@
 import { ChevronDown, X } from "lucide-react";
 import { ButtonForm } from "./buttonForm";
 import { FormDataProps } from "../type/types";
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TextArea } from "./TextArea";
 import { OptionSelect } from "./OptionSelect";
@@ -24,6 +24,14 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
   const pageIndex = () => {
     navigate("/Produtos");
   };
+  const [options, setOptions] = useState([
+    { name: "Brinquedo", isSelect: false },
+    { name: "Móvel", isSelect: false },
+    { name: "Papelaria", isSelect: true },
+    { name: "Saúde & Beleza", isSelect: false },
+    { name: "Utensílio", isSelect: false },
+    { name: "Vestuário", isSelect: false },
+  ]);
 
   return (
     <div className="p-6 space-y-6 bg-white rounded-[20px] w-[591px] pb-12">
@@ -77,12 +85,11 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
               <X className="size-6 cursor-pointer p-1 bg-[#F5EAEA] rounded-full" />
               <ChevronDown className="size-6 cursor-pointer" />
               <ul className="absolute bg-white flex flex-col gap-2 py-3 px-6 w-full top-16 rounded-lg">
-                <OptionSelect Children="Brinquedo" />
-                <OptionSelect Children="Móvel" />
-                <OptionSelect Children="Papelaria" />
-                <OptionSelect Children="Saúde & Beleza" />
-                <OptionSelect Children="Utensílio" />
-                <OptionSelect Children="Vestuário" />
+                {options.map((option) => (
+                  <OptionSelect isSelect={option.isSelect}>
+                    {option.name}
+                  </OptionSelect>
+                ))}
               </ul>
             </span>
           </label>
