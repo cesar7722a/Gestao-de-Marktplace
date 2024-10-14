@@ -1,10 +1,9 @@
-import { ChevronDown, ChevronUp, X } from "lucide-react";
 import { ButtonForm } from "./buttonForm";
 import { FormDataProps } from "../type/types";
 import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TextArea } from "./TextArea";
-import { OptionSelect } from "./OptionSelect";
+import { SelectForm } from "./SelectForm";
 
 interface FormProps {
   descri?: string | undefined;
@@ -88,31 +87,11 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
             handleChange={handleChange}
           />
 
-          <label htmlFor="" className="border border-t-0 border-r-0 border-l-0">
-            <span className="text-xs text-textPrimary">Categoria</span>
-            <span
-              onClick={handleSelect}
-              className="relative  py-[14px] flex text-textPrimary cursor-pointer"
-            >
-              <aside className="flex-1 text-textSecondary">Móvel</aside>
-              <X className="size-6 cursor-pointer p-1 bg-[#F5EAEA] rounded-full" />
-              {selectIsOpen ? (
-                <ChevronUp className="size-6 cursor-pointer" />
-              ) : (
-                <ChevronDown className="size-6 cursor-pointer" />
-              )}
-
-              {selectIsOpen && (
-                <ul className="absolute flex bg-white flex-col gap-2 py-3 px-6 w-full top-16 rounded-lg">
-                  {options.map((option) => (
-                    <OptionSelect isSelect={option.isSelect}>
-                      {option.name}
-                    </OptionSelect>
-                  ))}
-                </ul>
-              )}
-            </span>
-          </label>
+          <SelectForm
+            handleSelect={handleSelect}
+            options={options}
+            selectIsOpen={selectIsOpen}
+          />
         </div>
         <div className="flex gap-3">
           <ButtonForm
