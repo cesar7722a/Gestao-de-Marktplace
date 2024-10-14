@@ -101,8 +101,9 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
               ) : (
                 <ChevronDown className="size-6 cursor-pointer" />
               )}
+
               {selectIsOpen && (
-                <ul className="absolute bg-white flex flex-col gap-2 py-3 px-6 w-full top-16 rounded-lg">
+                <ul className="absolute flex bg-white flex-col gap-2 py-3 px-6 w-full top-16 rounded-lg">
                   {options.map((option) => (
                     <OptionSelect isSelect={option.isSelect}>
                       {option.name}
