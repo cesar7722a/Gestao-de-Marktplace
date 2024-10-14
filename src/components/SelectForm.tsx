@@ -25,7 +25,7 @@ export function SelectForm({
         className="relative  py-[14px] flex text-textPrimary cursor-pointer"
       >
         <aside className="flex-1 text-textSecondary">Móvel</aside>
-        <X className="size-6 cursor-pointer p-1 bg-[#F5EAEA] rounded-full" />
+        <X className="size-6 cursor-pointer p-1 bg-bgGeral rounded-full" />
         {selectIsOpen ? (
           <ChevronUp className="size-6 cursor-pointer" />
         ) : (
@@ -35,7 +35,7 @@ export function SelectForm({
         {selectIsOpen && (
           <ul className="absolute flex bg-white flex-col gap-2 py-3 px-6 w-full top-16 rounded-lg">
             {options.map((option) => (
-              <OptionSelect isSelect={option.isSelect}>
+              <OptionSelect key={option.name} isSelect={option.isSelect}>
                 {option.name}
               </OptionSelect>
             ))}

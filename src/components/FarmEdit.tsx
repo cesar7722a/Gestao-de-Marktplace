@@ -48,7 +48,7 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
         <h1 className="text-lg text-textPrimary flex-1 font-medium">
           Dados do produto
         </h1>
-        <span className="px-2 py-1 rounded-full bg-[#009CF0] text-white">
+        <span className="px-2 py-1 rounded-full bg-bgBlue text-white">
           anunciado
         </span>
       </div>
