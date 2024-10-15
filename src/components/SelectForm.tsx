@@ -17,6 +17,7 @@ export function SelectForm({
   options,
   selectIsOpen,
 }: SelectFormProps) {
+  const optionSelect = options.find((a) => a.isSelect === true);
   return (
     <label htmlFor="" className="border border-t-0 border-r-0 border-l-0">
       <span className="text-xs text-textPrimary">Categoria</span>
@@ -24,7 +25,9 @@ export function SelectForm({
         onClick={handleSelect}
         className="relative  py-[14px] flex text-textPrimary cursor-pointer"
       >
-        <aside className="flex-1 text-textSecondary">Móvel</aside>
+        <aside className="flex-1 text-textSecondary">
+          {optionSelect?.name}
+        </aside>
         <X className="size-6 cursor-pointer p-1 bg-bgGeral rounded-full" />
         {selectIsOpen ? (
           <ChevronUp className="size-6 cursor-pointer" />
