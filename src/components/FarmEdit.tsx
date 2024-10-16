@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { TextArea } from "./TextArea";
 import { SelectForm } from "./SelectForm";
 import { InputValor } from "./InputValor";
+import { InputName } from "./InputName";
 
 interface FormProps {
   descri?: string | undefined;
@@ -56,16 +57,7 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
       <form onSubmit={handleEdit} className="space-y-20">
         <div className="flex flex-col gap-5">
           <span className="flex gap-5">
-            <label className="flex-1 flex flex-col gap-2 border border-t-0 border-r-0 border-l-0">
-              <span className="text-xs text-textPrimary">Título</span>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                className="text-[#3D3D3D] outline-none"
-                onChange={handleChange}
-              />
-            </label>
+            <InputName handleChange={handleChange} name={formData.name} />
 
             <InputValor handleChange={handleChange} price={formData.price} />
           </span>
