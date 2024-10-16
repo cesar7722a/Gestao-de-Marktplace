@@ -36,7 +36,7 @@ export function SelectForm({
         )}
 
         {selectIsOpen && (
-          <ul className="absolute flex bg-white flex-col gap-2 py-3 px-6 w-full top-16 rounded-lg">
+          <ul className="absolute flex bg-white flex-col gap-2 py-3 px-6 w-full top-16 rounded-lg border">
             {options.map((option) => (
               <OptionSelect key={option.name} isSelect={option.isSelect}>
                 {option.name}

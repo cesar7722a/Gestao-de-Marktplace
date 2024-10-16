@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TextArea } from "./TextArea";
 import { SelectForm } from "./SelectForm";
+import { InputValor } from "./InputValor";
 
 interface FormProps {
   descri?: string | undefined;
@@ -66,19 +67,7 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
               />
             </label>
 
-            <label className="pb-2 flex flex-col gap-2 max-w-[200px] border border-t-0 border-r-0 border-l-0">
-              <span className="text-xs text-textPrimary">Valor</span>
-              <span className="flex gap-2 text-textSecondary">
-                <aside className="text-bg">R$</aside>
-                <input
-                  type="text"
-                  name="price"
-                  value={formData.price}
-                  className=" outline-none max-w-40"
-                  onChange={handleChange}
-                />
-              </span>
-            </label>
+            <InputValor handleChange={handleChange} price={formData.price} />
           </span>
 
           <TextArea
