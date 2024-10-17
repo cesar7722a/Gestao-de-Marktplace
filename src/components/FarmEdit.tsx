@@ -26,12 +26,12 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
     navigate("/Produtos");
   };
   const [options, setOptions] = useState([
-    { name: "Brinquedo", isSelect: false },
-    { name: "Móvel", isSelect: false },
-    { name: "Papelaria", isSelect: true },
-    { name: "Saúde & Beleza", isSelect: false },
-    { name: "Utensílio", isSelect: false },
-    { name: "Vestuário", isSelect: false },
+    { name: "Brinquedo", isSelect: false, id: 1 },
+    { name: "Móvel", isSelect: false, id: 2 },
+    { name: "Papelaria", isSelect: true, id: 3 },
+    { name: "Saúde & Beleza", isSelect: false, id: 4 },
+    { name: "Utensílio", isSelect: false, id: 5 },
+    { name: "Vestuário", isSelect: false, id: 6 },
   ]);
 
   const [selectIsOpen, setSelectIsOpen] = useState<boolean>(false);
@@ -58,7 +58,6 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
         <div className="flex flex-col gap-5">
           <span className="flex gap-5">
             <InputName handleChange={handleChange} name={formData.name} />
-
             <InputValor handleChange={handleChange} price={formData.price} />
           </span>
 
@@ -69,6 +68,7 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
           />
 
           <SelectForm
+            setOptions={setOptions}
             handleSelect={handleSelect}
             options={options}
             selectIsOpen={selectIsOpen}

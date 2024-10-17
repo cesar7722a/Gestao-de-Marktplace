@@ -1,21 +1,25 @@
 import { ChevronDown, ChevronUp, X } from "lucide-react";
 import { OptionSelect } from "./OptionSelect";
+import React from "react";
 
 interface option {
   name: string;
   isSelect: boolean;
+  id: number;
 }
 
 interface SelectFormProps {
   handleSelect: () => void;
   options: option[];
   selectIsOpen: boolean;
+  setOptions: React.Dispatch<React.SetStateAction<option[]>>;
 }
 
 export function SelectForm({
   handleSelect,
   options,
   selectIsOpen,
+  setOptions,
 }: SelectFormProps) {
   const optionSelect = options.find((a) => a.isSelect === true);
   return (
@@ -38,7 +42,13 @@ export function SelectForm({
         {selectIsOpen && (
           <ul className="absolute flex bg-white flex-col gap-2 py-3 px-6 w-full top-16 rounded-lg border">
             {options.map((option) => (
-              <OptionSelect key={option.name} isSelect={option.isSelect}>
+              <OptionSelect
+                key={option.id}
+                setOptions={setOptions}
+                id={option.id}
+                isSelect={option.isSelect}
+                options={options}
+              >
                 {option.name}
               </OptionSelect>
             ))}
