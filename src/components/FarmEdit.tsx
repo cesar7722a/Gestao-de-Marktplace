@@ -34,16 +34,6 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
     { name: "Vestuário", isSelect: false, id: 6 },
   ]);
 
-  const [selectIsOpen, setSelectIsOpen] = useState<boolean>(false);
-
-  const handleSelect = () => {
-    if (selectIsOpen) {
-      setSelectIsOpen(false);
-    } else {
-      setSelectIsOpen(true);
-    }
-  };
-
   return (
     <div className="p-6 space-y-6 bg-white rounded-[20px] w-[591px]">
       <div className="flex gap-2">
@@ -67,12 +57,7 @@ export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
             handleChange={handleChange}
           />
 
-          <SelectForm
-            setOptions={setOptions}
-            handleSelect={handleSelect}
-            options={options}
-            selectIsOpen={selectIsOpen}
-          />
+          <SelectForm setOptions={setOptions} options={options} />
         </div>
         <div className="flex gap-3">
           <ButtonForm

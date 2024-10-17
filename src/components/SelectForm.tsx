@@ -1,6 +1,6 @@
 import { ChevronDown, ChevronUp, X } from "lucide-react";
 import { OptionSelect } from "./OptionSelect";
-import React from "react";
+import React, { useState } from "react";
 
 interface option {
   name: string;
@@ -9,18 +9,21 @@ interface option {
 }
 
 interface SelectFormProps {
-  handleSelect: () => void;
   options: option[];
-  selectIsOpen: boolean;
   setOptions: React.Dispatch<React.SetStateAction<option[]>>;
 }
 
-export function SelectForm({
-  handleSelect,
-  options,
-  selectIsOpen,
-  setOptions,
-}: SelectFormProps) {
+export function SelectForm({ options, setOptions }: SelectFormProps) {
+  const [selectIsOpen, setSelectIsOpen] = useState<boolean>(false);
+
+  const handleSelect = () => {
+    if (selectIsOpen) {
+      setSelectIsOpen(false);
+    } else {
+      setSelectIsOpen(true);
+    }
+  };
+
   const optionSelect = options.find((a) => a.isSelect === true);
   return (
     <label htmlFor="" className="border border-t-0 border-r-0 border-l-0">
