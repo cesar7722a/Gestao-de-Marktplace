@@ -1,20 +1,6 @@
 import { Check } from "lucide-react";
-import React, { ReactNode } from "react";
-
-interface option {
-  name: string;
-  isSelect: boolean;
-  id: number;
-}
-
-interface OptionSelectProps {
-  children: ReactNode;
-  isSelect: boolean;
-  id: string | number;
-  options: option[];
-  setOptions: React.Dispatch<React.SetStateAction<option[]>>;
-  setSelectIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
+import React from "react";
+import { OptionSelectProps } from "../type/types";
 
 export function OptionSelect({
   children,

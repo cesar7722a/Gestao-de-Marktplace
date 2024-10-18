@@ -1,17 +1,7 @@
 import { ChevronDown, ChevronUp, X } from "lucide-react";
 import { OptionSelect } from "./OptionSelect";
-import React, { useState } from "react";
-
-interface option {
-  name: string;
-  isSelect: boolean;
-  id: number;
-}
-
-interface SelectFormProps {
-  options: option[];
-  setOptions: React.Dispatch<React.SetStateAction<option[]>>;
-}
+import { useState } from "react";
+import { SelectFormProps } from "../type/types";
 
 export function SelectForm({ options, setOptions }: SelectFormProps) {
   const [selectIsOpen, setSelectIsOpen] = useState<boolean>(false);

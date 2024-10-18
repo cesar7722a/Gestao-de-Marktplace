@@ -1,26 +1,17 @@
 import { ButtonForm } from "./buttonForm";
-import { FormDataProps } from "../type/types";
-import { FormEvent, useState } from "react";
+import { FormEditProps } from "../type/types";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TextArea } from "./TextArea";
 import { SelectForm } from "./SelectForm";
 import { InputValor } from "./InputValor";
 import { InputName } from "./InputName";
 
-interface FormProps {
-  descri?: string | undefined;
-  name?: string | undefined;
-  price?: number | undefined;
-  formData: FormDataProps;
-  handleEdit: (e: FormEvent<HTMLFormElement>) => void;
-  handleChange: (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => void;
-}
-
-export function FormEdit({ formData, handleChange, handleEdit }: FormProps) {
+export function FormEdit({
+  formData,
+  handleChange,
+  handleEdit,
+}: FormEditProps) {
   const navigate = useNavigate();
   const pageIndex = () => {
     navigate("/Produtos");
