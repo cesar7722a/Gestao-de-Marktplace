@@ -13,12 +13,14 @@ interface OptionSelectProps {
   id: string | number;
   options: option[];
   setOptions: React.Dispatch<React.SetStateAction<option[]>>;
+  setSelectIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export function OptionSelect({
   children,
   isSelect,
   id,
+  setSelectIsOpen,
   setOptions,
   options,
 }: OptionSelectProps) {
@@ -28,7 +30,6 @@ export function OptionSelect({
   ) => {
     event.stopPropagation();
 
-    console.log(idSelect);
     options.map((option) => {
       if (option.id === idSelect) {
         option.isSelect = true;
@@ -37,7 +38,7 @@ export function OptionSelect({
       }
     });
     setOptions(options);
-    console.log(options);
+    setSelectIsOpen(false);
   };
 
   return isSelect ? (

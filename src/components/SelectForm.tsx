@@ -46,6 +46,7 @@ export function SelectForm({ options, setOptions }: SelectFormProps) {
           <ul className="absolute flex bg-white flex-col gap-2 py-3 px-6 w-full top-16 rounded-lg border">
             {options.map((option) => (
               <OptionSelect
+                setSelectIsOpen={setSelectIsOpen}
                 key={option.id}
                 setOptions={setOptions}
                 id={option.id}
