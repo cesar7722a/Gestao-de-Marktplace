@@ -14,6 +14,10 @@ export function SelectForm({ options, setOptions }: SelectFormProps) {
     }
   };
 
+  const handleCleanOption: React.MouseEventHandler<SVGSVGElement> = (event) => {
+    event.stopPropagation();
+  };
+
   const optionSelect = options.find((a) => a.isSelect === true);
   return (
     <label htmlFor="" className="border border-t-0 border-r-0 border-l-0">
@@ -25,7 +29,10 @@ export function SelectForm({ options, setOptions }: SelectFormProps) {
         <aside className="flex-1 text-textSecondary">
           {optionSelect?.name}
         </aside>
-        <X className="size-6 cursor-pointer p-1 bg-bgGeral rounded-full" />
+        <X
+          onClick={handleCleanOption}
+          className="size-6 cursor-pointer p-1 bg-bgGeral rounded-full"
+        />
         {selectIsOpen ? (
           <ChevronUp className="size-6 cursor-pointer" />
         ) : (

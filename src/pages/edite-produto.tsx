@@ -40,7 +40,6 @@ export function EditeProdutos() {
 
   const handleEdit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData);
   };
 
   return (
@@ -60,9 +59,6 @@ export function EditeProdutos() {
               handleEdit={handleEdit}
               handleChange={handleChange}
               formData={formData}
-              descri={produtoTOedit?.descri}
-              price={produtoTOedit?.price}
-              name={produtoTOedit?.name}
             />
           </div>
         </>
