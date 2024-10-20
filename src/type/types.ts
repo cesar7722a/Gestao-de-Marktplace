@@ -13,7 +13,7 @@ export type MycontextTypes = {
   produts: ProdutosProps[];
   setProducts: React.Dispatch<React.SetStateAction<ProdutosProps[]>>;
   addProduto: ({ name, id, descri, image, price }: ProdutosProps) => void;
-  editProduto: (id: number) => void;
+  editProduto: ({ name, id, descri, price }: ProdutosProps) => void;
   deleteProduto: (id: number) => void;
 };
 
