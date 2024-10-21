@@ -1,7 +1,7 @@
 import { FormEvent, ReactNode } from "react";
 
 export type ProdutosProps = {
-  id?: number;
+  id?: number | undefined;
   name: string | undefined;
   price: number | undefined;
   image?: string | undefined;

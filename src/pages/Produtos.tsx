@@ -41,6 +41,7 @@ export function Produtos() {
               image={produt.image}
               price={produt.price}
               descri={produt.descri}
+              categoria={produt.categoria}
             />
           ))}
         </div>

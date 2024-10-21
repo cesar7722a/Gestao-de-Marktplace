@@ -1,19 +1,16 @@
+import { ProdutosProps } from "../type/types";
 import { CardAnuncio } from "./CardAnuncio";
 
-type CardProdutProps = {
-  image: string;
-  name: string;
-  price: number;
-  descri: string;
-  id: number;
-  changeToPageEdit: (number: number) => void;
-};
+interface CardProdutProps extends ProdutosProps {
+  changeToPageEdit: (id: number) => void;
+}
 
 export function CardProdut({
   name,
   image,
   price,
   descri,
+  categoria,
   changeToPageEdit,
   id,
 }: CardProdutProps) {
@@ -30,7 +27,7 @@ export function CardProdut({
           height={144}
           className="rounded-2xl"
         />
-        <CardAnuncio />
+        <CardAnuncio categoria={categoria} />
       </figure>
       <div className="px-3 pt-3 pb-4 space-y-2">
         <div className="flex text-[#1D1D1D]">
