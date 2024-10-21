@@ -57,7 +57,7 @@ export function MycontextProvider({ children }: MycontextProviderProps) {
         "Carrinho de brinquedo na cor amarela, feito de metal, com detalhes realistas. ",
     },
   ]);
-  function addProduto({ descri, id, image, name, price }: ProdutosProps) {
+  const addProduto = ({ descri, id, image, name, price }: ProdutosProps) => {
     const newProduto = {
       descri: descri,
       id: id,
@@ -66,9 +66,17 @@ export function MycontextProvider({ children }: MycontextProviderProps) {
       price: price,
     };
     setProducts([...produts, newProduto]);
-  }
+  };
+
+  const editProduto = (id: number, produto: Partial<ProdutosProps>) => {
+    setProducts((prev) =>
+      prev.map((item) => (item.id === id ? { ...item, ...produto } : item))
+    );
+  };
   return (
-    <Mycontext.Provider value={{ addProduto, produts, setProducts }}>
+    <Mycontext.Provider
+      value={{ addProduto, produts, setProducts, editProduto }}
+    >
       {children}
     </Mycontext.Provider>
   );

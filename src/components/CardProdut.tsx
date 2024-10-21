@@ -39,7 +39,7 @@ export function CardProdut({
           </span>
           <span className="flex gap-1 items-center">
             <aside className="text-xs">R$</aside>
-            <aside className="text-lg font-semibold">{price.toFixed(2)}</aside>
+            <aside className="text-lg font-semibold">{price}</aside>
           </span>
         </div>
         <p className="line-clamp-2 text-sm text-[#666]">{descri}</p>

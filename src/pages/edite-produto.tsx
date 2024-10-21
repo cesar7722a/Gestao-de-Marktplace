@@ -17,6 +17,7 @@ export function EditeProdutos() {
     );
   }
 
+  const { editProduto } = context;
   const { produts } = context;
   const produtoTOedit = produts.find((a) => a.id === Number(idUrl));
 
@@ -40,6 +41,12 @@ export function EditeProdutos() {
 
   const handleEdit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const produto = {
+      name: formData.name,
+      descri: formData.descri,
+      price: formData.price,
+    };
+    editProduto(Number(idUrl), produto);
   };
 
   return (
