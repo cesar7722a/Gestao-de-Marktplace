@@ -2,10 +2,10 @@ import { FormEvent, ReactNode } from "react";
 
 export type ProdutosProps = {
   id?: number | undefined;
-  name: string | undefined;
-  price: number | undefined;
+  name?: string | undefined;
+  price?: number | undefined;
   image?: string | undefined;
-  descri: string | undefined;
+  descri?: string | undefined;
   categoria?: string | undefined;
 };
 
