@@ -21,7 +21,6 @@ export function EditeProdutos() {
   const { produts } = context;
   const produtoTOedit = produts.find((a) => a.id === Number(idUrl));
   const categoriaOld = produtoTOedit?.categoria;
-
   const [categoriaNew, setCategoriaNew] = useState(categoriaOld);
 
   const [formData, setFormData] = useState<ProdutosProps>({
@@ -48,6 +47,7 @@ export function EditeProdutos() {
       name: formData.name,
       descri: formData.descri,
       price: formData.price,
+      categoria: categoriaNew,
     };
     editProduto(Number(idUrl), produto);
   };

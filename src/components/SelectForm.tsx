@@ -18,6 +18,10 @@ export function SelectForm({
       setSelectIsOpen(true);
     }
   };
+  const NewCategoria = options.find((option) => option.isSelect === true);
+  if (NewCategoria !== undefined) {
+    setCategoria(NewCategoria?.name);
+  }
 
   const handleCleanOption: React.MouseEventHandler<SVGSVGElement> = (event) => {
     event.stopPropagation();

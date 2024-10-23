@@ -47,7 +47,7 @@ export interface SelectFormProps {
   options: option[];
   setOptions: React.Dispatch<React.SetStateAction<option[]>>;
   categoria?: string | undefined;
-  setCategoria: React.Dispatch<React.SetStateAction<string>>;
+  setCategoria: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
 
 export interface FormEditProps {
@@ -56,7 +56,7 @@ export interface FormEditProps {
   price?: number | undefined;
   categoria?: string | undefined;
   formData: FormDataProps;
-  setCategoria: React.Dispatch<React.SetStateAction<string>>;
+  setCategoria: React.Dispatch<React.SetStateAction<string | undefined>>;
   handleEdit: (e: FormEvent<HTMLFormElement>) => void;
   handleChange: (
     e: React.ChangeEvent<
