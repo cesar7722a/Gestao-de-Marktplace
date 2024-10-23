@@ -23,7 +23,7 @@ export function MycontextProvider({ children }: MycontextProviderProps) {
       name: "Camiseta masculina",
       price: 35.89,
       image: "../public/t-shert.png",
-      categoria: "Móvel",
+      categoria: "Vestuário",
       descri:
         "Camiseta básica cinza, confeccionada em algodão 100%, com corte slim fit e gola redonda.",
     },
@@ -32,7 +32,7 @@ export function MycontextProvider({ children }: MycontextProviderProps) {
       name: "Kit utensílios",
       price: 86.79,
       image: "../public/kit-untesilio.png",
-      categoria: "Móvel",
+      categoria: "Utensílio",
       descri: "Conjunto com 10 de cozinha, feitos medeira de bambu.",
     },
     {
@@ -40,7 +40,7 @@ export function MycontextProvider({ children }: MycontextProviderProps) {
       name: "Kit de cremes",
       price: 150.9,
       image: "../public/ccreme.png",
-      categoria: "Móvel",
+      categoria: "Saúde & Beleza",
       descri:
         "Conjunto de cuidados com a pele contendo 3 cremes: hidratante facial, creme para as mãos e crememe anti-idade.",
     },
@@ -49,7 +49,7 @@ export function MycontextProvider({ children }: MycontextProviderProps) {
       name: "Caderno de desenho",
       price: 56,
       image: "../public/caderno.png",
-      categoria: "Móvel",
+      categoria: "Papelaria",
       descri:
         "Caderno tamanho A4 com 120 páginas, gramatura de 180g/m², ideal para técnicas variadas como lápis, carvão e tinta.",
     },
@@ -58,7 +58,7 @@ export function MycontextProvider({ children }: MycontextProviderProps) {
       name: "Carro de brinquedo",
       price: 24.6,
       image: "../public/carro.png",
-      categoria: "Móvel",
+      categoria: "Brinquedo",
       descri:
         "Carrinho de brinquedo na cor amarela, feito de metal, com detalhes realistas. ",
     },
