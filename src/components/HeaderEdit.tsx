@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export function HeaderEdit() {
   return (
     <div className="flex flex-col gap-2">
-      <Link to={"/Produtos"} className="text-bg">
+      <Link to={"/Produtos"} className="text-bg flex gap-2 hover:text-bgDark">
         <MoveLeft />
         Voltar
       </Link>
@@ -14,12 +14,12 @@ export function HeaderEdit() {
           headerPrimary="Editar produto"
           headerSecundary="Gerencie as informações do produto cadastrado"
         />
-        <div className="pr-3 flex gap-4 text-sm text-[#F24D0D] font-medium">
-          <button className="p-[2px] flex gap-2 hover:text-[#C43C08]">
+        <div className="pr-3 flex gap-4 text-sm text-bg font-medium">
+          <button className="p-[2px] flex gap-2 hover:text-bgDark">
             <Check className="size-5" />
             <span>Marcar como vendido</span>
           </button>
-          <button className="p-[2px] flex gap-2 hover:text-[#C43C08]">
+          <button className="p-[2px] flex gap-2 hover:text-bgDark">
             <Ban className="size-5" />
             <span>Desativar anúncio</span>
           </button>
