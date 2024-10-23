@@ -3,7 +3,12 @@ import { OptionSelect } from "./OptionSelect";
 import { useState } from "react";
 import { SelectFormProps } from "../type/types";
 
-export function SelectForm({ options, setOptions }: SelectFormProps) {
+export function SelectForm({
+  options,
+  setOptions,
+  categoria,
+  setCategoria,
+}: SelectFormProps) {
   const [selectIsOpen, setSelectIsOpen] = useState<boolean>(false);
 
   const handleSelect = () => {
@@ -27,7 +32,7 @@ export function SelectForm({ options, setOptions }: SelectFormProps) {
         className="relative  py-[14px] flex text-textPrimary cursor-pointer"
       >
         <aside className="flex-1 text-textSecondary">
-          {optionSelect?.name}
+          {optionSelect === undefined ? categoria : optionSelect?.name}
         </aside>
         <X
           onClick={handleCleanOption}

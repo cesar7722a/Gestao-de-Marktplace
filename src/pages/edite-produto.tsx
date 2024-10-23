@@ -20,6 +20,9 @@ export function EditeProdutos() {
   const { editProduto } = context;
   const { produts } = context;
   const produtoTOedit = produts.find((a) => a.id === Number(idUrl));
+  const categoriaOld = produtoTOedit?.categoria;
+
+  const [categoriaNew, setCategoriaNew] = useState(categoriaOld);
 
   const [formData, setFormData] = useState<ProdutosProps>({
     name: produtoTOedit?.name,
@@ -66,6 +69,8 @@ export function EditeProdutos() {
               handleEdit={handleEdit}
               handleChange={handleChange}
               formData={formData}
+              categoria={categoriaNew}
+              setCategoria={setCategoriaNew}
             />
           </div>
         </>

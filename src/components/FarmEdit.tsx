@@ -11,6 +11,8 @@ export function FormEdit({
   formData,
   handleChange,
   handleEdit,
+  setCategoria,
+  categoria,
 }: FormEditProps) {
   const navigate = useNavigate();
   const pageIndex = () => {
@@ -19,7 +21,7 @@ export function FormEdit({
   const [options, setOptions] = useState([
     { name: "Brinquedo", isSelect: false, id: 1 },
     { name: "Móvel", isSelect: false, id: 2 },
-    { name: "Papelaria", isSelect: true, id: 3 },
+    { name: "Papelaria", isSelect: false, id: 3 },
     { name: "Saúde & Beleza", isSelect: false, id: 4 },
     { name: "Utensílio", isSelect: false, id: 5 },
     { name: "Vestuário", isSelect: false, id: 6 },
@@ -48,7 +50,12 @@ export function FormEdit({
             handleChange={handleChange}
           />
 
-          <SelectForm setOptions={setOptions} options={options} />
+          <SelectForm
+            setOptions={setOptions}
+            options={options}
+            categoria={categoria}
+            setCategoria={setCategoria}
+          />
         </div>
         <div className="flex gap-3">
           <ButtonForm
