@@ -1,4 +1,5 @@
 import { ChevronDown } from "lucide-react";
+import { ButtonForm } from "./buttonForm";
 
 export function FormAdd() {
   return (
@@ -56,12 +57,12 @@ export function FormAdd() {
           </label>
         </div>
         <div className="flex gap-3">
-          <button className="px-5 rounded-xl h-12 border border-[#F24D0D] hover:bg-[#FBF4F4] w-full items-center text-[#F24D0D]">
+          <ButtonForm type="button" size="lg" color="secondary">
             Cancelar
-          </button>
-          <button className="px-5 rounded-xl h-12 bg-[#F24D0D] hover:bg-[#C43C08] w-full items-center text-white">
+          </ButtonForm>
+          <ButtonForm type="submit" size="lg" color="primary">
             Salvar e publicar
-          </button>
+          </ButtonForm>
         </div>
       </form>
     </div>
