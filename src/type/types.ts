@@ -1,4 +1,4 @@
-import { FormEvent, ReactNode } from "react";
+import { ChangeEvent, FormEvent, ReactNode } from "react";
 
 export type ProdutosProps = {
   id?: number | undefined;
@@ -62,5 +62,14 @@ export interface FormEditProps {
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
+  ) => void;
+}
+
+export interface InputProps {
+  name?: string | undefined;
+  price?: string | undefined | number;
+  value?: string | undefined;
+  handleChange: (
+    e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement>
   ) => void;
 }

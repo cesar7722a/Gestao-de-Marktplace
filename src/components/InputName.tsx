@@ -1,14 +1,6 @@
-import { ChangeEvent } from "react";
+import { InputProps } from "../type/types";
 
-interface InputNameProps {
-  name?: string | undefined;
-  price?: string | undefined | number;
-  handleChange: (
-    e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement>
-  ) => void;
-}
-
-export function InputName({ handleChange, name }: InputNameProps) {
+export function InputName({ handleChange, name }: InputProps) {
   return (
     <label className="flex-1 flex flex-col gap-2 border border-t-0 border-r-0 border-l-0">
       <span className="text-xs text-textPrimary">Título</span>

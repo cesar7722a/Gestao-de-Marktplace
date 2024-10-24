@@ -1,4 +1,3 @@
-import { ChevronDown } from "lucide-react";
 import { ButtonForm } from "./buttonForm";
 import { InputValor } from "./InputValor";
 import { InputName } from "./InputName";
@@ -26,13 +25,13 @@ export function FormAdd() {
       <form className="space-y-20">
         <div className="flex flex-col gap-5">
           <span className="flex gap-5">
-            <InputName />
-            <InputValor name="price" />
+            <InputName name="name" handleChange={handleChange} />
+            <InputValor price={0.0} handleChange={handleChange} />
           </span>
 
-          <TextArea />
+          <TextArea name="text-area" value="" handleChange={handleChange} />
 
-          {/* <SelectForm /> */}
+          <SelectForm />
         </div>
         <div className="flex gap-3">
           <ButtonForm type="button" size="lg" color="secondary">

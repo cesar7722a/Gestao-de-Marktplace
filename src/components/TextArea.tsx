@@ -1,14 +1,6 @@
-import { ChangeEvent } from "react";
+import { InputProps } from "../type/types";
 
-interface TextAreaProps {
-  name: string | undefined;
-  value: string | undefined;
-  handleChange: (
-    e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement>
-  ) => void;
-}
-
-export function TextArea({ name, value, handleChange }: TextAreaProps) {
+export function TextArea({ name, value, handleChange }: InputProps) {
   return (
     <label
       htmlFor=""
