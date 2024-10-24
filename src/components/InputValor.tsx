@@ -2,7 +2,7 @@ import { ChangeEvent } from "react";
 
 interface InputValorProps {
   name?: string | undefined;
-  price: string | undefined | number;
+  price?: string | undefined | number;
   handleChange: (
     e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement>
   ) => void;
