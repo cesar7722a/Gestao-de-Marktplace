@@ -10,6 +10,7 @@ export function InputName({ handleChange, name }: InputProps) {
         value={name}
         className="text-[#3D3D3D] outline-none"
         onChange={handleChange}
+        placeholder="Digete o Nome do Produto"
       />
     </label>
   );

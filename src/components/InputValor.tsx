@@ -12,6 +12,7 @@ export function InputValor({ price, handleChange }: InputProps) {
           value={price}
           className=" outline-none max-w-40"
           onChange={handleChange}
+          placeholder="Digete o preço"
         />
       </span>
     </label>

@@ -14,6 +14,7 @@ export function TextArea({ name, value, handleChange }: InputProps) {
         cols={5}
         className="max-w-[539px] h-20 text-textSecondary px-2 outline-none"
         onChange={handleChange}
+        placeholder="Digete a descrição do produto"
       />
     </label>
   );

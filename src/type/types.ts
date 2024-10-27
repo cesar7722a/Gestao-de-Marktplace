@@ -57,8 +57,8 @@ export interface FormEditProps {
   categoria?: string | undefined;
   formData: FormDataProps;
   setCategoria: React.Dispatch<React.SetStateAction<string | undefined>>;
-  handleEdit: (e: FormEvent<HTMLFormElement>) => void;
-  handleChange: (
+  handleEdit?: (e: FormEvent<HTMLFormElement>) => void;
+  handleChange?: (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
@@ -69,7 +69,7 @@ export interface InputProps {
   name?: string | undefined;
   price?: string | undefined | number;
   value?: string | undefined;
-  handleChange: (
+  handleChange?: (
     e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement>
   ) => void;
 }
