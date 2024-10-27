@@ -72,7 +72,7 @@ export function FormAdd() {
   return (
     <div className="p-6 space-y-6 bg-white rounded-[20px] w-[591px]">
       <div className="flex gap-2">
-        <h1 className="text-lg text-[#666666] flex-1 font-medium">
+        <h1 className="text-lg text-textPrimary flex-1 font-medium">
           Dados do produto
         </h1>
       </div>
