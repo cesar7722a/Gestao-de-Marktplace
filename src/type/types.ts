@@ -10,12 +10,11 @@ export type ProdutosProps = {
 };
 
 export type MycontextTypes = {
-  children: ReactNode;
+  children?: ReactNode;
   produts: ProdutosProps[];
   setProducts: React.Dispatch<React.SetStateAction<ProdutosProps[]>>;
   addProduto: ({ name, id, descri, image, price }: ProdutosProps) => void;
   editProduto: (id: number, produto: ProdutosProps) => void;
-  deleteProduto: (id: number) => void;
 };
 
 export type MycontextProviderProps = {
