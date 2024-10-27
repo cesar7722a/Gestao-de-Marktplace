@@ -2,10 +2,13 @@ import { ButtonForm } from "./buttonForm";
 import { InputValor } from "./InputValor";
 import { InputName } from "./InputName";
 import { TextArea } from "./TextArea";
-import { FormEvent, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
 import { SelectForm } from "./SelectForm";
 import { ProdutosProps } from "../type/types";
 import { useNavigate } from "react-router-dom";
+import { Mycontext } from "../context/context";
+
+let nextID = 7;
 
 export function FormAdd() {
   const [options, setOptions] = useState([
@@ -38,12 +41,27 @@ export function FormAdd() {
     });
   };
 
+  const context = useContext(Mycontext);
+
+  if (!context) {
+    throw new Error(
+      "Lista de PRODUTOS deve ser usada dentro de um MyContextProvider"
+    );
+  }
+
+  const { addProduto } = context;
+
   const handleAddProduto = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(categoria);
-    console.log(formData.name);
-    console.log(formData.descri);
-    console.log(formData.price);
+    const produto = {
+      id: nextID++,
+      name: formData.name,
+      descri: formData.descri,
+      price: Number(formData.price),
+      categoria: categoria,
+      image: "../public/sofa.png",
+    };
+    addProduto(produto);
   };
 
   const navigate = useNavigate();

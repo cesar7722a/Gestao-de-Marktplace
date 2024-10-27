@@ -63,15 +63,8 @@ export function MycontextProvider({ children }: MycontextProviderProps) {
         "Carrinho de brinquedo na cor amarela, feito de metal, com detalhes realistas. ",
     },
   ]);
-  const addProduto = ({ descri, id, image, name, price }: ProdutosProps) => {
-    const newProduto = {
-      descri: descri,
-      id: id,
-      image: image,
-      name: name,
-      price: price,
-    };
-    setProducts([...produts, newProduto]);
+  const addProduto = (produto: Partial<ProdutosProps>) => {
+    setProducts([...produts, produto]);
   };
 
   const editProduto = (id: number, produto: Partial<ProdutosProps>) => {
