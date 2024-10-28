@@ -1,4 +1,5 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext, useState } from "react";
+import { MycontextProviderProps } from "../type/types";
 
 interface userProps {
   id: number;
@@ -19,7 +20,7 @@ export const ContextUser = createContext<contextUserType | undefined>(
   undefined
 );
 
-export function ContextUserProvider(children: ReactNode) {
+export function ContextUserProvider({ children }: MycontextProviderProps) {
   const [users, setUsers] = useState<userProps[]>([
     {
       id: 0,
@@ -31,57 +32,25 @@ export function ContextUserProvider(children: ReactNode) {
     },
     {
       id: 1,
-      name: "César",
+      name: "João",
       telefone: 926614139,
-      email: "cesar@gmail.com",
+      email: "joao@gmail.com",
       password: "123456",
       image: "../../public/Logo.png",
     },
     {
       id: 2,
-      name: "César",
+      name: "Francsco",
       telefone: 926614139,
-      email: "cesar@gmail.com",
+      email: "francisco@gmail.com",
       password: "123456",
       image: "../../public/Logo.png",
     },
     {
       id: 3,
-      name: "César",
+      name: "Tchvinda",
       telefone: 926614139,
-      email: "cesar@gmail.com",
-      password: "123456",
-      image: "../../public/Logo.png",
-    },
-    {
-      id: 4,
-      name: "César",
-      telefone: 926614139,
-      email: "cesar@gmail.com",
-      password: "123456",
-      image: "../../public/Logo.png",
-    },
-    {
-      id: 5,
-      name: "César",
-      telefone: 926614139,
-      email: "cesar@gmail.com",
-      password: "123456",
-      image: "../../public/Logo.png",
-    },
-    {
-      id: 6,
-      name: "César",
-      telefone: 926614139,
-      email: "cesar@gmail.com",
-      password: "123456",
-      image: "../../public/Logo.png",
-    },
-    {
-      id: 7,
-      name: "César",
-      telefone: 926614139,
-      email: "cesar@gmail.com",
+      email: "Tchivinda@gmail.com",
       password: "123456",
       image: "../../public/Logo.png",
     },
