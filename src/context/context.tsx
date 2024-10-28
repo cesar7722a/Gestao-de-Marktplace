@@ -4,12 +4,10 @@ import {
   MycontextTypes,
   ProdutosProps,
 } from "../type/types";
-import { useNavigate } from "react-router-dom";
 
 export const Mycontext = createContext<MycontextTypes | undefined>(undefined);
 
 export function MycontextProvider({ children }: MycontextProviderProps) {
-  const navigate = useNavigate();
   const [produts, setProducts] = useState<ProdutosProps[]>([
     {
       id: 0,
@@ -67,14 +65,12 @@ export function MycontextProvider({ children }: MycontextProviderProps) {
   ]);
   const addProduto = (produto: Partial<ProdutosProps>) => {
     setProducts([...produts, produto]);
-    navigate("/Produtos");
   };
 
   const editProduto = (id: number, produto: Partial<ProdutosProps>) => {
     setProducts((prev) =>
       prev.map((item) => (item.id === id ? { ...item, ...produto } : item))
     );
-    navigate("/Produtos");
   };
   return (
     <Mycontext.Provider
