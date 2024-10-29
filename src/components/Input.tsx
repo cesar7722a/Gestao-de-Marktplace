@@ -5,7 +5,9 @@ type InputProps = {
   name: string;
   placeholder: string;
   type: string;
+  value: string | undefined;
   Icon: LucideIcon;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export function Input({
@@ -14,6 +16,8 @@ export function Input({
   titleLabel,
   type,
   Icon,
+  value,
+  onChange,
 }: InputProps) {
   return (
     <label htmlFor="" className="flex flex-col text-[#666666] text-xs">
@@ -22,9 +26,11 @@ export function Input({
         <Icon className="size-6 text-[#949494]" />
         <input
           name={name}
+          value={value}
           type={type}
           placeholder={placeholder}
           className="text-base flex-1 outline-none text-[#949494]"
+          onChange={onChange}
         />
       </span>
     </label>

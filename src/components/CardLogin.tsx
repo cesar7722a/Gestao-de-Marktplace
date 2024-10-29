@@ -2,20 +2,44 @@ import { MoveRight } from "lucide-react";
 import { FormLogin } from "../components/FormLogin";
 import { HeaderForm } from "./HeaderForm";
 import { useNavigate } from "react-router-dom";
-import { FormEvent } from "react";
+import { FormEvent, useContext, useState } from "react";
+import { ContextUser } from "../context/context-user";
 
 type CardLoginProps = {
   openCadastro: () => void;
 };
 
 export function CardLogin({ openCadastro }: CardLoginProps) {
-  const navigate = useNavigate();
+  const [formDatas, setFormDatas] = useState({
+    email: "",
+    password: "",
+  });
 
-  const pageIndex = (e: FormEvent) => {
+  const handleOnchange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
-    navigate("/Produtos");
+    const { name, value } = e.target;
+    setFormDatas({
+      ...formDatas,
+      [name]: value,
+    });
   };
 
+  const navigate = useNavigate();
+  const pageIndex = (e: FormEvent) => {
+    e.preventDefault();
+    const findUser = users.find((a) => a.email === formDatas.email);
+    if (findUser?.password === formDatas.password) {
+      navigate("/Produtos");
+    }
+  };
+
+  const contextUser = useContext(ContextUser);
+  if (!contextUser) {
+    throw new Error(
+      "Lista de PRODUTOS deve ser usada dentro de um MyContextProvider"
+    );
+  }
+  const { users } = contextUser;
   return (
     <div className="p-6">
       <div className="bg-white rounded-[32px] w-[494px]">
@@ -26,7 +50,11 @@ export function CardLogin({ openCadastro }: CardLoginProps) {
               h2="Informe seu e-mail e senha para entrar"
             />
           </div>
-          <FormLogin pageIndex={pageIndex} />
+          <FormLogin
+            pageIndex={pageIndex}
+            handleOnchange={handleOnchange}
+            formDatas={formDatas}
+          />
           <div className="space-y-3">
             <h3 className="text-base text-[#666666]">
               Ainda não tem uma conta?

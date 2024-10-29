@@ -25,6 +25,8 @@ export interface FormDataProps {
   descri?: string | undefined;
   name?: string | undefined;
   price?: number | undefined;
+  password?: string | undefined;
+  email?: string | undefined;
 }
 
 export interface option {
