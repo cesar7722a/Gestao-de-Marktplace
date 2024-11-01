@@ -4,7 +4,7 @@ import { Produtos } from "./pages/Produtos";
 import { LayourtRooter } from "./components/Layourt";
 import { EditeProdutos } from "./pages/edite-produto";
 import { AddProduto } from "./pages/addProduto";
-import { ErrorPage } from "./components/error-page";
+import { ErrorPage } from "./pages/error-page";
 
 export function App() {
   return (
