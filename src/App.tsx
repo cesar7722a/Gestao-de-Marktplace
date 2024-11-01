@@ -4,6 +4,7 @@ import { Produtos } from "./pages/Produtos";
 import { LayourtRooter } from "./components/Layourt";
 import { EditeProdutos } from "./pages/edite-produto";
 import { AddProduto } from "./pages/addProduto";
+import { ErrorPage } from "./components/error-page";
 
 export function App() {
   return (
@@ -15,6 +16,7 @@ export function App() {
           <Route path="/edite-produto/:id" element={<EditeProdutos />} />
         </Route>
         <Route path="/add-produto" element={<AddProduto />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
   );
