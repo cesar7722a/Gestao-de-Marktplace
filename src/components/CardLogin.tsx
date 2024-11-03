@@ -29,7 +29,13 @@ export function CardLogin({ openCadastro }: CardLoginProps) {
     e.preventDefault();
     const findUser = users.find((a) => a.email === formDatas.email);
     if (findUser?.password === formDatas.password) {
+      setUsers((prev) =>
+        prev.map((item) =>
+          item.id === findUser.id ? { ...item, isLogado: true } : item
+        )
+      );
       navigate("/Produtos");
+      console.log(users);
     }
   };
 
@@ -39,7 +45,7 @@ export function CardLogin({ openCadastro }: CardLoginProps) {
       "Lista de PRODUTOS deve ser usada dentro de um MyContextProvider"
     );
   }
-  const { users } = contextUser;
+  const { users, setUsers } = contextUser;
   return (
     <div className="p-6">
       <div className="bg-white rounded-[32px] w-[494px]">

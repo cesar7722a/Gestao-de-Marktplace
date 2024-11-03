@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 interface PrivateRouterProps {
   children: React.ReactNode;
@@ -9,6 +9,9 @@ export function PrivateRouter({
   children,
   isAuthenticated,
 }: PrivateRouterProps) {
-  const navigate = useNavigate();
-  return isAuthenticated ? <>{children}</> : navigate("/login");
+  return isAuthenticated ? (
+    <>{children}</>
+  ) : (
+    <Navigate to="/login" replace={true} />
+  );
 }

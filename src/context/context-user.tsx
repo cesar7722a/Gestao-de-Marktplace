@@ -8,6 +8,7 @@ interface userProps {
   email: string;
   password: string;
   image: string;
+  isLogado: boolean;
 }
 interface contextUserType {
   users: userProps[];
@@ -29,6 +30,7 @@ export function ContextUserProvider({ children }: MycontextProviderProps) {
       email: "cesar@gmail.com",
       password: "123456",
       image: "../../public/Logo.png",
+      isLogado: false,
     },
     {
       id: 1,
@@ -37,6 +39,7 @@ export function ContextUserProvider({ children }: MycontextProviderProps) {
       email: "joao@gmail.com",
       password: "123456",
       image: "../../public/Logo.png",
+      isLogado: false,
     },
     {
       id: 2,
@@ -45,6 +48,7 @@ export function ContextUserProvider({ children }: MycontextProviderProps) {
       email: "francisco@gmail.com",
       password: "123456",
       image: "../../public/Logo.png",
+      isLogado: false,
     },
     {
       id: 3,
@@ -53,6 +57,7 @@ export function ContextUserProvider({ children }: MycontextProviderProps) {
       email: "Tchivinda@gmail.com",
       password: "123456",
       image: "../../public/Logo.png",
+      isLogado: false,
     },
   ]);
 
