@@ -9,9 +9,5 @@ export function PrivateRouter({
   children,
   isAuthenticated,
 }: PrivateRouterProps) {
-  return isAuthenticated ? (
-    <>{children}</>
-  ) : (
-    <Navigate to="/login" replace={true} />
-  );
+  return isAuthenticated ? <>{children}</> : <Navigate to="/login" replace />;
 }

@@ -68,7 +68,14 @@ export function ContextUserProvider({ children }: MycontextProviderProps) {
     setUsers((prev) => prev.filter((a) => a.id !== idUser));
   };
   return (
-    <ContextUser.Provider value={{ addUse, deletUser, setUsers, users }}>
+    <ContextUser.Provider
+      value={{
+        addUse,
+        deletUser,
+        setUsers,
+        users,
+      }}
+    >
       {children}
     </ContextUser.Provider>
   );

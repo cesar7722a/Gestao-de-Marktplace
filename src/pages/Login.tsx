@@ -2,7 +2,10 @@ import { useState } from "react";
 import { CardLogin } from "../components/CardLogin";
 import { CardCadastro } from "../components/CardCadastro";
 
-export function Login() {
+interface LoginProps {
+  setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
+}
+export function Login({ setIsAuthenticated }: LoginProps) {
   const [isLogin, setIsLogin] = useState<boolean>(false);
 
   const openCadastro = () => {
@@ -27,7 +30,10 @@ export function Login() {
         {isLogin ? (
           <CardCadastro closeCadastro={closeCadastro} />
         ) : (
-          <CardLogin openCadastro={openCadastro} />
+          <CardLogin
+            setIsAuthenticated={setIsAuthenticated}
+            openCadastro={openCadastro}
+          />
         )}
       </div>
     </div>

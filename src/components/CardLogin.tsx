@@ -7,9 +7,13 @@ import { ContextUser } from "../context/context-user";
 
 type CardLoginProps = {
   openCadastro: () => void;
+  setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export function CardLogin({ openCadastro }: CardLoginProps) {
+export function CardLogin({
+  openCadastro,
+  setIsAuthenticated,
+}: CardLoginProps) {
   const [formDatas, setFormDatas] = useState({
     email: "",
     password: "",
@@ -34,8 +38,8 @@ export function CardLogin({ openCadastro }: CardLoginProps) {
           item.id === findUser.id ? { ...item, isLogado: true } : item
         )
       );
-      navigate("/Produtos");
-      console.log(users);
+      setIsAuthenticated(true);
+      navigate("/");
     }
   };
 

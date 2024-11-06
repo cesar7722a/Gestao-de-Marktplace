@@ -6,24 +6,17 @@ import { EditeProdutos } from "./pages/edite-produto";
 import { AddProduto } from "./pages/addProduto";
 import { ErrorPage } from "./pages/error-page";
 import { PrivateRouter } from "./components/private-router";
-import { useContext, useState } from "react";
-import { ContextUser } from "./context/context-user";
+import { useState } from "react";
 
 export function App() {
-  const contextUser = useContext(ContextUser);
-  if (!contextUser) {
-    throw new Error(
-      "Lista de PRODUTOS deve ser usada dentro de um MyContextProvider"
-    );
-  }
-  const { users } = contextUser;
-  const find = users.find((a) => a.isLogado === true);
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
-
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/login"
+          element={<Login setIsAuthenticated={setIsAuthenticated} />}
+        />
         <Route element={<LayourtRooter />}>
           <Route
             path="/"
@@ -33,10 +26,31 @@ export function App() {
               </PrivateRouter>
             }
           />
-          <Route path="/edite-produto/:id" element={<EditeProdutos />} />
+          <Route
+            path="/edite-produto/:id"
+            element={
+              <PrivateRouter isAuthenticated={isAuthenticated}>
+                <EditeProdutos />
+              </PrivateRouter>
+            }
+          />
         </Route>
-        <Route path="/add-produto" element={<AddProduto />} />
-        <Route path="*" element={<ErrorPage />} />
+        <Route
+          path="/add-produto"
+          element={
+            <PrivateRouter isAuthenticated={isAuthenticated}>
+              <AddProduto />
+            </PrivateRouter>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <PrivateRouter isAuthenticated={isAuthenticated}>
+              <ErrorPage />
+            </PrivateRouter>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
