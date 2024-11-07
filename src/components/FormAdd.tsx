@@ -66,7 +66,7 @@ export function FormAdd() {
 
   const navigate = useNavigate();
   const pageIndex = () => {
-    navigate("/Produtos");
+    navigate("/");
   };
 
   return (

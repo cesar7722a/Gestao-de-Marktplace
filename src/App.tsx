@@ -15,7 +15,12 @@ export function App() {
       <Routes>
         <Route
           path="/login"
-          element={<Login setIsAuthenticated={setIsAuthenticated} />}
+          element={
+            <Login
+              setIsAuthenticated={setIsAuthenticated}
+              isAuthenticated={isAuthenticated}
+            />
+          }
         />
         <Route element={<LayourtRooter />}>
           <Route

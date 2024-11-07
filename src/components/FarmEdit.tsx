@@ -16,7 +16,7 @@ export function FormEdit({
 }: FormEditProps) {
   const navigate = useNavigate();
   const pageIndex = () => {
-    navigate("/Produtos");
+    navigate("/");
   };
   const [options, setOptions] = useState([
     { name: "Brinquedo", isSelect: false, id: 1 },

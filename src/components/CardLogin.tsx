@@ -2,16 +2,18 @@ import { MoveRight } from "lucide-react";
 import { FormLogin } from "../components/FormLogin";
 import { HeaderForm } from "./HeaderForm";
 import { useNavigate } from "react-router-dom";
-import { FormEvent, useContext, useState } from "react";
+import { FormEvent, useContext, useEffect, useState } from "react";
 import { ContextUser } from "../context/context-user";
 
 type CardLoginProps = {
   openCadastro: () => void;
   setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
+  isAuthenticated: boolean;
 };
 
 export function CardLogin({
   openCadastro,
+  isAuthenticated,
   setIsAuthenticated,
 }: CardLoginProps) {
   const [formDatas, setFormDatas] = useState({
@@ -29,7 +31,7 @@ export function CardLogin({
   };
 
   const navigate = useNavigate();
-  const pageIndex = (e: FormEvent) => {
+  const handleLogin = (e: FormEvent) => {
     e.preventDefault();
     const findUser = users.find((a) => a.email === formDatas.email);
     if (findUser?.password === formDatas.password) {
@@ -42,6 +44,12 @@ export function CardLogin({
       navigate("/");
     }
   };
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/", { replace: true });
+    }
+  }, [isAuthenticated, navigate]);
 
   const contextUser = useContext(ContextUser);
   if (!contextUser) {
@@ -61,7 +69,7 @@ export function CardLogin({
             />
           </div>
           <FormLogin
-            pageIndex={pageIndex}
+            pageIndex={handleLogin}
             handleOnchange={handleOnchange}
             formDatas={formDatas}
           />

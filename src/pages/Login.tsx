@@ -4,8 +4,9 @@ import { CardCadastro } from "../components/CardCadastro";
 
 interface LoginProps {
   setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
+  isAuthenticated: boolean;
 }
-export function Login({ setIsAuthenticated }: LoginProps) {
+export function Login({ setIsAuthenticated, isAuthenticated }: LoginProps) {
   const [isLogin, setIsLogin] = useState<boolean>(false);
 
   const openCadastro = () => {
@@ -33,6 +34,7 @@ export function Login({ setIsAuthenticated }: LoginProps) {
           <CardLogin
             setIsAuthenticated={setIsAuthenticated}
             openCadastro={openCadastro}
+            isAuthenticated={isAuthenticated}
           />
         )}
       </div>
