@@ -1,12 +1,18 @@
 import { MoveRight } from "lucide-react";
 import { HeaderForm } from "./HeaderForm";
 import { FormCadastro } from "./FormCadastro";
+import { useState } from "react";
+import { ProdutosProps } from "../type/types";
 
 type CardCadastroProps = {
   closeCadastro: () => void;
 };
 
 export function CardCadastro({ closeCadastro }: CardCadastroProps) {
+  const [formdata, setFormData] = useState<ProdutosProps>({
+    name: "",
+    telefone: null,
+  });
   return (
     <div className="p-6">
       <div className="bg-white rounded-[32px] w-[494px]">

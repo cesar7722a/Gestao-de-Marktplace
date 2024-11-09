@@ -53,7 +53,7 @@ export function FormCadastro() {
           name="password"
           placeholder="Senha de acesso"
           titleLabel="Senha"
-          type="email"
+          type="password"
           Icon={KeyRound}
         />
 
