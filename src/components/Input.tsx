@@ -5,9 +5,13 @@ type InputProps = {
   name: string;
   placeholder: string;
   type: string;
-  value: string | undefined;
+  value: string | undefined | number;
   Icon: LucideIcon;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleChange?: (
+    e: React.ChangeEvent<
+      HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
+    >
+  ) => void;
 };
 
 export function Input({
@@ -17,7 +21,7 @@ export function Input({
   type,
   Icon,
   value,
-  onChange,
+  handleChange,
 }: InputProps) {
   return (
     <label htmlFor="" className="flex flex-col text-[#666666] text-xs">
@@ -30,7 +34,7 @@ export function Input({
           type={type}
           placeholder={placeholder}
           className="text-base flex-1 outline-none text-[#949494]"
-          onChange={onChange}
+          onChange={handleChange}
         />
       </span>
     </label>

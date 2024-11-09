@@ -70,7 +70,19 @@ export interface InputProps {
   name?: string | undefined;
   price?: string | undefined | number;
   value?: string | undefined;
+  placeholder?: string;
+  titleLabel?: string;
+  type?: string;
   handleChange?: (
     e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement>
   ) => void;
+}
+
+export interface userProps {
+  name: string;
+  telefone: number | undefined;
+  email: string;
+  password: string;
+  isPassword?: string;
+  imagem?: string;
 }
