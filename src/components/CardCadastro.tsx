@@ -60,10 +60,13 @@ export function CardCadastro({
       image: "../../public/Logo.png",
     };
     addUse(user);
+  };
+
+  useEffect(() => {
     setIsAuthenticated(true);
     navigate("/");
     console.log(users);
-  };
+  }, [users]);
 
   useEffect(() => {
     if (isAuthenticated) {
