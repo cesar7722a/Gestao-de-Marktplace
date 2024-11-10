@@ -29,12 +29,16 @@ export function Login({ setIsAuthenticated, isAuthenticated }: LoginProps) {
           </figure>
         </div>
         {isLogin ? (
-          <CardCadastro closeCadastro={closeCadastro} />
+          <CardCadastro
+            setIsAuthenticated={setIsAuthenticated}
+            isAuthenticated={isAuthenticated}
+            closeCadastro={closeCadastro}
+          />
         ) : (
           <CardLogin
             setIsAuthenticated={setIsAuthenticated}
-            openCadastro={openCadastro}
             isAuthenticated={isAuthenticated}
+            openCadastro={openCadastro}
           />
         )}
       </div>

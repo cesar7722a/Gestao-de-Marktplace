@@ -2,12 +2,12 @@ import { createContext, useState } from "react";
 import { MycontextProviderProps } from "../type/types";
 
 interface userProps {
-  id: number;
+  id?: number;
   name: string;
-  telefone: number;
+  telefone: number | undefined;
   email: string;
   password: string;
-  image: string;
+  image?: string;
   isLogado: boolean;
 }
 interface contextUserType {
