@@ -5,7 +5,11 @@ import { FormDataProps } from "../type/types";
 
 type FormLoginProps = {
   pageIndex: (e: FormEvent) => void;
-  handleOnchange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleOnchange: (
+    e: React.ChangeEvent<
+      HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
+    >
+  ) => void;
   formDatas: FormDataProps;
 };
 
@@ -24,7 +28,7 @@ export function FormLogin({
           placeholder="Seu e-mail cadastrado"
           titleLabel="Email"
           type="email"
-          onChange={handleOnchange}
+          handleChange={handleOnchange}
         />
 
         <Input
@@ -34,7 +38,7 @@ export function FormLogin({
           placeholder="Sua senha de acesso"
           titleLabel="Senha"
           type="password"
-          onChange={handleOnchange}
+          handleChange={handleOnchange}
         />
       </div>
       <button

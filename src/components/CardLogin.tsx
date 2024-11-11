@@ -21,7 +21,11 @@ export function CardLogin({
     password: "",
   });
 
-  const handleOnchange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleOnchange = (
+    e: React.ChangeEvent<
+      HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
+    >
+  ) => {
     e.preventDefault();
     const { name, value } = e.target;
     setFormDatas({
