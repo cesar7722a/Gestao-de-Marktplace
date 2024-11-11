@@ -96,6 +96,7 @@ export function FormAdd() {
             handleChange={handleChange}
           />
           <SelectForm
+            labelIsvisible={true}
             options={options}
             setCategoria={setCategoria}
             categoria={categoria}

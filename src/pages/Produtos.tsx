@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CardProdut } from "../components/CardProdut";
 import { CardFilter } from "../components/CardFilter";
 import { useNavigate } from "react-router-dom";
 import { HeaderText } from "../components/headerText";
 import { Container } from "../components/container";
 import { Mycontext } from "../context/context";
+import { ProdutosProps } from "../type/types";
 
 export function Produtos() {
   const context = useContext(Mycontext);
@@ -16,10 +17,25 @@ export function Produtos() {
   }
 
   const { produts } = context;
+  const [ProductSerch, setProductSerch] = useState<ProdutosProps[]>(produts);
   const navigate = useNavigate();
 
-  const changeToPageEdit = (id: number) => {
+  const changeToPageEdit = (id: number | undefined) => {
     navigate(`/edite-produto/:?id=${id}`);
+  };
+  const [valueSerch, setValueSerch] = useState("");
+  const [status, setStatus] = useState<string | undefined>("");
+  const newProduct = produts.filter(
+    (a) => a.name === valueSerch || a.categoria === status
+  );
+  const HandleFilter = (e: React.FormEvent<HTMLElement>) => {
+    e.preventDefault();
+    if (newProduct.length != 0) {
+      setProductSerch(newProduct);
+    } else {
+      setProductSerch(produts);
+    }
+    console.log(newProduct);
   };
 
   return (
@@ -29,19 +45,20 @@ export function Produtos() {
         headerSecundary="Acesse gerencie a sua lista de produtos à venda"
       />
       <div className="flex gap-6">
-        <CardFilter />
+        <CardFilter
+          HandleFilter={HandleFilter}
+          setStatus={setStatus}
+          status={status}
+          setValueSerch={setValueSerch}
+          valueSerch={valueSerch}
+        />
 
         <div className="grid grid-cols-2 gap-4">
-          {produts.map((produt) => (
+          {ProductSerch?.map((produt) => (
             <CardProdut
+              produt={produt}
               changeToPageEdit={changeToPageEdit}
               key={produt.id}
-              id={produt.id}
-              name={produt.name}
-              image={produt.image}
-              price={produt.price}
-              descri={produt.descri}
-              categoria={produt.categoria}
             />
           ))}
         </div>

@@ -51,6 +51,7 @@ export function FormEdit({
           />
 
           <SelectForm
+            labelIsvisible={true}
             setOptions={setOptions}
             options={options}
             categoria={categoria}

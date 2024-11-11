@@ -12,6 +12,7 @@ export default {
         bgBase: "#FBF4F4",
         textPrimary: "#666",
         textSecondary: "#3D3D3D",
+        textTerciary: "#949494",
         bgBlue: "#009CF0",
         bgGeral: "#F5EAEA",
       },

@@ -7,6 +7,7 @@ export function SelectForm({
   options,
   setOptions,
   categoria,
+  labelIsvisible,
   setCategoria,
 }: SelectFormProps) {
   const [selectIsOpen, setSelectIsOpen] = useState<boolean>(false);
@@ -30,7 +31,9 @@ export function SelectForm({
   const optionSelect = options.find((a) => a.isSelect === true);
   return (
     <label htmlFor="" className="border border-t-0 border-r-0 border-l-0">
-      <span className="text-xs text-textPrimary">Categoria</span>
+      {labelIsvisible && (
+        <span className="text-xs text-textPrimary">Categoria</span>
+      )}
       <span
         onClick={handleSelect}
         className="relative  py-[14px] flex text-textPrimary cursor-pointer"

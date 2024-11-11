@@ -46,6 +46,7 @@ export interface OptionSelectProps {
 
 export interface SelectFormProps {
   options: option[];
+  labelIsvisible: boolean;
   setOptions: React.Dispatch<React.SetStateAction<option[]>>;
   categoria?: string | undefined;
   setCategoria: React.Dispatch<React.SetStateAction<string | undefined>>;
