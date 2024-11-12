@@ -25,17 +25,19 @@ export function Produtos() {
   };
   const [valueSerch, setValueSerch] = useState("");
   const [status, setStatus] = useState<string | undefined>("");
-  const newProduct = produts.filter(
-    (a) => a.name === valueSerch || a.categoria === status
-  );
+
   const HandleFilter = (e: React.FormEvent<HTMLElement>) => {
     e.preventDefault();
+    const newProduct = produts.filter((a) =>
+      a.name?.toLocaleLowerCase()?.includes(valueSerch.toLocaleLowerCase())
+    );
     if (newProduct.length != 0) {
       setProductSerch(newProduct);
     } else {
       setProductSerch(produts);
     }
     console.log(newProduct);
+    console.log(valueSerch);
   };
 
   return (
