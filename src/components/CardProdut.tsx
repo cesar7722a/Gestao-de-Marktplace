@@ -20,7 +20,7 @@ export function CardProdut({ produt, changeToPageEdit }: CardProdutProps) {
           height={144}
           className="rounded-2xl"
         />
-        <CardAnuncio categoria={produt.categoria} />
+        <CardAnuncio categoria={produt.categoria} status={produt.status} />
       </figure>
       <div className="px-3 pt-3 pb-4 space-y-2">
         <div className="flex text-[#1D1D1D]">
