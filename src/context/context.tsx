@@ -17,6 +17,7 @@ export function MycontextProvider({ children }: MycontextProviderProps) {
       categoria: "Móvel",
       descri:
         "Sofá revestido em couro legítimo, com estrutura em madeira maciça e pés em metal cromado.",
+      status: "Cancelado",
     },
     {
       id: 1,
@@ -26,6 +27,7 @@ export function MycontextProvider({ children }: MycontextProviderProps) {
       categoria: "Vestuário",
       descri:
         "Camiseta básica cinza, confeccionada em algodão 100%, com corte slim fit e gola redonda.",
+      status: "Anunciado",
     },
     {
       id: 2,
@@ -34,6 +36,7 @@ export function MycontextProvider({ children }: MycontextProviderProps) {
       image: "../public/kit-untesilio.png",
       categoria: "Utensílio",
       descri: "Conjunto com 10 de cozinha, feitos medeira de bambu.",
+      status: "Vendido",
     },
     {
       id: 3,
@@ -43,6 +46,7 @@ export function MycontextProvider({ children }: MycontextProviderProps) {
       categoria: "Saúde & Beleza",
       descri:
         "Conjunto de cuidados com a pele contendo 3 cremes: hidratante facial, creme para as mãos e crememe anti-idade.",
+      status: "Anunciado",
     },
     {
       id: 4,
@@ -52,6 +56,7 @@ export function MycontextProvider({ children }: MycontextProviderProps) {
       categoria: "Papelaria",
       descri:
         "Caderno tamanho A4 com 120 páginas, gramatura de 180g/m², ideal para técnicas variadas como lápis, carvão e tinta.",
+      status: "Anunciado",
     },
     {
       id: 5,
@@ -61,6 +66,7 @@ export function MycontextProvider({ children }: MycontextProviderProps) {
       categoria: "Brinquedo",
       descri:
         "Carrinho de brinquedo na cor amarela, feito de metal, com detalhes realistas. ",
+      status: "Anunciado",
     },
   ]);
   const addProduto = (produto: Partial<ProdutosProps>) => {

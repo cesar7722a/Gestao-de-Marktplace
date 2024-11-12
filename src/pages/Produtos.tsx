@@ -36,8 +36,6 @@ export function Produtos() {
     } else {
       setProductSerch(produts);
     }
-    console.log(newProduct);
-    console.log(valueSerch);
   };
 
   return (

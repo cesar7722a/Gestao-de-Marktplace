@@ -7,6 +7,7 @@ export type ProdutosProps = {
   image?: string | undefined;
   descri?: string | undefined;
   categoria?: string | undefined;
+  status?: string | undefined;
 };
 
 export type MycontextTypes = {
