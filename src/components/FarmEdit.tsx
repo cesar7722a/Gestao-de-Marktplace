@@ -34,7 +34,7 @@ export function FormEdit({
           Dados do produto
         </h1>
         <span className="px-2 py-1 rounded-full bg-bgBlue text-white">
-          anunciado
+          {formData.status}
         </span>
       </div>
       <form onSubmit={handleEdit} className="space-y-20">

@@ -26,6 +26,7 @@ export function EditeProdutos() {
     name: produtoTOedit?.name,
     descri: produtoTOedit?.descri,
     price: produtoTOedit?.price,
+    status: produtoTOedit?.status,
   });
 
   const handleChange = (

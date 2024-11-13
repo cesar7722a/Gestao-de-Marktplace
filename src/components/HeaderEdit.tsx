@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export function HeaderEdit() {
   return (
     <div className="flex flex-col gap-2">
-      <Link to={"/Produtos"} className="text-bg flex gap-2 hover:text-bgDark">
+      <Link to={"/"} className="text-bg flex gap-2 hover:text-bgDark">
         <MoveLeft />
         Voltar
       </Link>

@@ -28,6 +28,7 @@ export interface FormDataProps {
   price?: number | undefined;
   password?: string | undefined;
   email?: string | undefined;
+  status?: string;
 }
 
 export interface option {
