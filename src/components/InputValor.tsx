@@ -9,7 +9,7 @@ export function InputValor({ price, handleChange }: InputProps) {
         <input
           type="text"
           name="price"
-          value={price}
+          value={Number(price).toFixed(2)}
           className=" outline-none max-w-40"
           onChange={handleChange}
           placeholder="Digete o preço"
