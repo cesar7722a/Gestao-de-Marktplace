@@ -7,6 +7,7 @@ import { AddProduto } from "./pages/addProduto";
 import { ErrorPage } from "./pages/error-page";
 import { PrivateRouter } from "./components/private-router";
 import { useState } from "react";
+import { DashBord } from "./pages/dash-bord";
 
 export function App() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
@@ -39,7 +40,9 @@ export function App() {
               </PrivateRouter>
             }
           />
+          <Route path="/dash-bord" element={<DashBord />} />
         </Route>
+
         <Route
           path="/add-produto"
           element={
@@ -48,6 +51,7 @@ export function App() {
             </PrivateRouter>
           }
         />
+
         <Route
           path="*"
           element={
