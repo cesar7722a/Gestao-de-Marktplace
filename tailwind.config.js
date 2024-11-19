@@ -17,6 +17,8 @@ export default {
         bgBlue: "#009CF0",
         blueSengudary: "#5EC5FD",
         bgGeral: "#F5EAEA",
+        blueLight: "#D7EFF9",
+        blueDark: "#0095E5",
       },
     },
   },
