@@ -1,9 +1,8 @@
-import { Calendar, Store, Tag, UsersRound } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { Container } from "../../components/container";
 import { HeaderText } from "../../components/headerText";
-import { CardToatalProdutos } from "./card-total-produtos";
-import { Icon } from "./icon";
-import { Text } from "./text";
+import { SectionTotalProdutos } from "./section-card-total-produtos";
+import { GraficoDashBord } from "./grafico-dash-bord";
 
 export function DashBord() {
   return (
@@ -15,28 +14,7 @@ export function DashBord() {
         />
       </div>
       <div className="flex gap-6">
-        <div className="space-y-4">
-          <CardToatalProdutos>
-            <Icon>
-              <Tag className="size-10 text-blueDark" />
-            </Icon>
-            <Text textPrimary="24" textSecundary="Produtos vendidos" />
-          </CardToatalProdutos>
-
-          <CardToatalProdutos>
-            <Icon>
-              <Store className="size-10 text-blueDark" />
-            </Icon>
-            <Text textPrimary="56" textSecundary="Produtos anunciados" />
-          </CardToatalProdutos>
-
-          <CardToatalProdutos>
-            <Icon>
-              <UsersRound className="size-10 text-blueDark" />
-            </Icon>
-            <Text textPrimary="1.238" textSecundary="Pessoas visitantes" />
-          </CardToatalProdutos>
-        </div>
+        <SectionTotalProdutos />
         <div className="w-[767px] px-6 pt-6 pb-5 bg-white rounded-2xl space-y-7">
           <div className="flex justify-between">
             <h1 className="text-sm text-textG font-bold">Visitantes</h1>
@@ -46,6 +24,9 @@ export function DashBord() {
                 26 de junho - 25 de julho
               </h2>
             </span>
+          </div>
+          <div className="w-full h-64">
+            <GraficoDashBord />
           </div>
         </div>
       </div>
